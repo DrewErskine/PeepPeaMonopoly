@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="example.cashcard.CashCardJsonTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-05-23T21:11:45" hostname="DREW" time="0.055">
+  <properties/>
+  <testcase name="cashCardSerializationTest()" classname="example.cashcard.CashCardJsonTest" time="0.029"/>
+  <testcase name="cashCardDeserializationTest()" classname="example.cashcard.CashCardJsonTest" time="0.007"/>
+  <testcase name="cashCardListSerializationTest()" classname="example.cashcard.CashCardJsonTest" time="0.014"/>
+  <testcase name="cashCardListDeserializationTest()" classname="example.cashcard.CashCardJsonTest" time="0.001"/>
+  <system-out><![CDATA[2024-05-23T17:11:45.442-04:00  INFO 11736 --- [CashCard] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [example.cashcard.CashCardJsonTest]: CashCardJsonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-23T17:11:45.450-04:00  INFO 11736 --- [CashCard] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration example.cashcard.CashCardApplication for test class example.cashcard.CashCardJsonTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2024-05-23T17:11:45.469-04:00  INFO 11736 --- [CashCard] [    Test worker] example.cashcard.CashCardJsonTest        : Starting CashCardJsonTest using Java 21.0.3 with PID 11736 (started by Dmers in C:\Users\Dmers\Code\Spring\cashcard)
+2024-05-23T17:11:45.470-04:00  INFO 11736 --- [CashCard] [    Test worker] example.cashcard.CashCardJsonTest        : No active profile set, falling back to 1 default profile: "default"
+2024-05-23T17:11:45.512-04:00  INFO 11736 --- [CashCard] [    Test worker] example.cashcard.CashCardJsonTest        : Started CashCardJsonTest in 0.059 seconds (process running for 9.879)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

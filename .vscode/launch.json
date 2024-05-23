@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CashCardApplication<cashcard>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "example.cashcard.CashCardApplication",
+            "projectName": "cashcard",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
