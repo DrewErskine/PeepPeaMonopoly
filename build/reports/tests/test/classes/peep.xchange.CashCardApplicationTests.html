@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CashCardApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CashCardApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/peep.xchange.html">peep.xchange</a> &gt; CashCardApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">16</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.409s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">shouldCreateANewCashCard()</td>
+<td class="success">0.155s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldDeleteAnExistingCashCard()</td>
+<td class="success">0.146s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotAllowAccessToCashCardsTheyDoNotOwn()</td>
+<td class="success">0.113s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotAllowDeletionOfCashCardsTheyDoNotOwn()</td>
+<td class="success">0.132s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotDeleteACashCardThatDoesNotExist()</td>
+<td class="success">0.058s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotReturnACashCardWhenUsingBadCredentials()</td>
+<td class="success">0.113s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotReturnACashCardWithAnUnknownId()</td>
+<td class="success">0.064s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotUpdateACashCardThatDoesNotExist()</td>
+<td class="success">0.111s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotUpdateACashCardThatIsOwnedBySomeoneElse()</td>
+<td class="success">0.080s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldRejectUsersWhoAreNotCardOwners()</td>
+<td class="success">0.118s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnACashCardWhenDataIsSaved()</td>
+<td class="success">0.059s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnAPageOfCashCards()</td>
+<td class="success">0.064s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnASortedPageOfCashCards()</td>
+<td class="success">0.940s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnASortedPageOfCashCardsWithNoParametersAndUseDefaultValues()</td>
+<td class="success">0.058s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnAllCashCardsWhenListIsRequested()</td>
+<td class="success">0.069s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldUpdateAnExistingCashCard()</td>
+<td class="success">0.129s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>19:41:22.260 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [peep.xchange.CashCardApplicationTests]: CashCardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:41:22.369 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.CashCardApplicationTests
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-23T19:41:22.796-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 26896 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-23T19:41:22.797-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-23T19:41:23.720-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-23T19:41:23.751-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JDBC repository interface.
+2024-05-23T19:41:24.501-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-23T19:41:24.534-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-23T19:41:24.535-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-23T19:41:24.615-04:00  INFO 26896 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-23T19:41:24.616-04:00  INFO 26896 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1795 ms
+2024-05-23T19:41:24.923-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f70f3967-26c9-4563-87da-d3d86cd79009;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-05-23T19:41:25.758-04:00  INFO 26896 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-23T19:41:26.224-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-23T19:41:26.320-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3cc74fc4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c697186, org.springframework.security.web.context.SecurityContextHolderFilter@2bf0c70d, org.springframework.security.web.header.HeaderWriterFilter@65a2755e, org.springframework.web.filter.CorsFilter@185a7dd0, org.springframework.security.web.authentication.logout.LogoutFilter@3e55d844, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3e61cffd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@649009d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32c6d164, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2358443e, org.springframework.security.web.access.ExceptionTranslationFilter@4ede8888, org.springframework.security.web.access.intercept.AuthorizationFilter@18f8ebd4]
+2024-05-23T19:41:26.674-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9027 (http) with context path '/'
+2024-05-23T19:41:26.684-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 4.17 seconds (process running for 5.208)
+2024-05-23T19:41:27.404-04:00  INFO 26896 --- [xchange] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-23T19:41:27.404-04:00  INFO 26896 --- [xchange] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-23T19:41:27.405-04:00  INFO 26896 --- [xchange] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-23T19:41:27.999-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:f70f3967-26c9-4563-87da-d3d86cd79009;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-23T19:41:28.029-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 26896 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-23T19:41:28.029-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-23T19:41:28.234-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-23T19:41:28.239-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JDBC repository interface.
+2024-05-23T19:41:28.289-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-23T19:41:28.290-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-23T19:41:28.291-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-23T19:41:28.307-04:00  INFO 26896 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-23T19:41:28.307-04:00  INFO 26896 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 277 ms
+2024-05-23T19:41:28.344-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:892b5e67-ef6c-46d3-a7de-d42075865d10;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-05-23T19:41:28.553-04:00  INFO 26896 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-23T19:41:28.617-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-23T19:41:28.623-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@529fda9f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b8f5aa4, org.springframework.security.web.context.SecurityContextHolderFilter@493ed8e6, org.springframework.security.web.header.HeaderWriterFilter@6bab373c, org.springframework.web.filter.CorsFilter@7d0e46dd, org.springframework.security.web.authentication.logout.LogoutFilter@402adc9c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@444720b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b897456, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4dcc0e3d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@318353, org.springframework.security.web.access.ExceptionTranslationFilter@2943e61c, org.springframework.security.web.access.intercept.AuthorizationFilter@5da16ed6]
+2024-05-23T19:41:28.671-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9030 (http) with context path '/'
+2024-05-23T19:41:28.681-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.674 seconds (process running for 7.204)
+2024-05-23T19:41:28.687-04:00  INFO 26896 --- [xchange] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-23T19:41:28.687-04:00  INFO 26896 --- [xchange] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-23T19:41:28.688-04:00  INFO 26896 --- [xchange] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-23T19:41:29.147-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:892b5e67-ef6c-46d3-a7de-d42075865d10;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-23T19:41:29.172-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 26896 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-23T19:41:29.172-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-23T19:41:29.358-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-23T19:41:29.362-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 1 JDBC repository interface.
+2024-05-23T19:41:29.406-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-23T19:41:29.408-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-23T19:41:29.409-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-23T19:41:29.424-04:00  INFO 26896 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-23T19:41:29.424-04:00  INFO 26896 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 249 ms
+2024-05-23T19:41:29.459-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:d4a00b76-a27b-489c-afd0-5387a01beafc;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-05-23T19:41:29.666-04:00  INFO 26896 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-23T19:41:29.718-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-23T19:41:29.726-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3b5f72fa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67c2ff5d, org.springframework.security.web.context.SecurityContextHolderFilter@7b7268db, org.springframework.security.web.header.HeaderWriterFilter@4af8ff3, org.springframework.web.filter.CorsFilter@29e8c09c, org.springframework.security.web.authentication.logout.LogoutFilter@1b513ce8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@297bbd41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d8230cd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b257072, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d8de155, org.springframework.security.web.access.ExceptionTranslationFilter@2e29a7d, org.springframework.security.web.access.intercept.AuthorizationFilter@375f276e]
+2024-05-23T19:41:29.766-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9033 (http) with context path '/'
+2024-05-23T19:41:29.775-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.621 seconds (process running for 8.298)
+2024-05-23T19:41:29.782-04:00  INFO 26896 --- [xchange] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-23T19:41:29.782-04:00  INFO 26896 --- [xchange] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-23T19:41:29.782-04:00  INFO 26896 --- [xchange] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-23T19:41:30.085-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:d4a00b76-a27b-489c-afd0-5387a01beafc;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-23T19:41:30.103-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 26896 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-23T19:41:30.103-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-23T19:41:30.238-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-23T19:41:30.242-04:00  INFO 26896 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 1 JDBC repository interface.
+2024-05-23T19:41:30.278-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-23T19:41:30.279-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-23T19:41:30.280-04:00  INFO 26896 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-23T19:41:30.293-04:00  INFO 26896 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-23T19:41:30.293-04:00  INFO 26896 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 188 ms
+2024-05-23T19:41:30.317-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:2e88b769-d75f-4524-9667-c2a704c207f0;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-05-23T19:41:30.497-04:00  INFO 26896 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-23T19:41:30.538-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-23T19:41:30.541-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2810d9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@408f3054, org.springframework.security.web.context.SecurityContextHolderFilter@9124278, org.springframework.security.web.header.HeaderWriterFilter@72de1d86, org.springframework.web.filter.CorsFilter@2a64cb1f, org.springframework.security.web.authentication.logout.LogoutFilter@6d985720, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2f26634a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@524250ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7432cb37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3644d12a, org.springframework.security.web.access.ExceptionTranslationFilter@456c6754, org.springframework.security.web.access.intercept.AuthorizationFilter@4f94b2a8]
+2024-05-23T19:41:30.573-04:00  INFO 26896 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9036 (http) with context path '/'
+2024-05-23T19:41:30.576-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.487 seconds (process running for 9.099)
+2024-05-23T19:41:30.581-04:00  INFO 26896 --- [xchange] [o-auto-4-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-23T19:41:30.581-04:00  INFO 26896 --- [xchange] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-23T19:41:30.582-04:00  INFO 26896 --- [xchange] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (C:\Users\Dmers\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.16\4a451ee6484abac3a498df0f3b33ed00a6fced4d\byte-buddy-agent-1.14.16.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.7</a> at May 23, 2024, 7:41:31 PM</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.card-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .card-form input, .card-form button {
+    margin-top: 5px;
+  }
+  
