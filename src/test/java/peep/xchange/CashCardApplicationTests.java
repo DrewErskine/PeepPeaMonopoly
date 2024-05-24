@@ -149,7 +149,7 @@ class CashCardApplicationTests {
                 ResponseEntity<String> response = restTemplate
                                 .withBasicAuth("hank-owns-no-cards", "qrs456")
                                 .getForEntity("/cashcards/99", String.class);
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
         }
 
         @Test
