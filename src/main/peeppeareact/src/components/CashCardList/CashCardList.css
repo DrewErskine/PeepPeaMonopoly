@@ -1,5 +1,24 @@
+/* CashCardList.css */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center the cards */
+}
+
 .card-list div {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
+  background: #bad6cf; /* Pastel green */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 40px); /* Adjusted for gap and centering */
+  margin-bottom: 20px;
+  color: #333; /* Text color */
+  border: 1px solid #ccc; /* Light border */
+}
+
+.no-cards {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+}

@@ -1,7 +1,11 @@
+/* CashCardDetail.css */
 .card-detail {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #bad6cf; /* Pastel green */
+  max-width: 400px;
+  margin: 20px auto; /* Center the detail card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333; /* Text color */
+}
