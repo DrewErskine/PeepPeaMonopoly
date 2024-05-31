@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="peep.xchange.CashCardJsonTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-05-23T23:41:31" hostname="DREW" time="0.035">
+<testsuite name="peep.xchange.CashCardJsonTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-05-31T15:04:44" hostname="DREW" time="0.027">
   <properties/>
-  <testcase name="cashCardSerializationTest()" classname="peep.xchange.CashCardJsonTest" time="0.022"/>
+  <testcase name="cashCardSerializationTest()" classname="peep.xchange.CashCardJsonTest" time="0.014"/>
   <testcase name="cashCardDeserializationTest()" classname="peep.xchange.CashCardJsonTest" time="0.005"/>
-  <testcase name="cashCardListSerializationTest()" classname="peep.xchange.CashCardJsonTest" time="0.004"/>
+  <testcase name="cashCardListSerializationTest()" classname="peep.xchange.CashCardJsonTest" time="0.005"/>
   <testcase name="cashCardListDeserializationTest()" classname="peep.xchange.CashCardJsonTest" time="0.001"/>
-  <system-out><![CDATA[2024-05-23T19:41:30.998-04:00  INFO 26896 --- [xchange] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [peep.xchange.CashCardJsonTest]: CashCardJsonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-05-23T19:41:31.006-04:00  INFO 26896 --- [xchange] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.CashCardJsonTest
+  <system-out><![CDATA[2024-05-31T11:04:44.112-04:00  INFO 12184 --- [xchange] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [peep.xchange.CashCardJsonTest]: CashCardJsonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-31T11:04:44.119-04:00  INFO 12184 --- [xchange] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.CashCardJsonTest
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -16,9 +16,9 @@
 
  :: Spring Boot ::                (v3.3.0)
 
-2024-05-23T19:41:31.023-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardJsonTest            : Starting CashCardJsonTest using Java 21.0.3 with PID 26896 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
-2024-05-23T19:41:31.023-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardJsonTest            : No active profile set, falling back to 1 default profile: "default"
-2024-05-23T19:41:31.085-04:00  INFO 26896 --- [xchange] [    Test worker] peep.xchange.CashCardJsonTest            : Started CashCardJsonTest in 0.077 seconds (process running for 9.608)
+2024-05-31T11:04:44.137-04:00  INFO 12184 --- [xchange] [    Test worker] peep.xchange.CashCardJsonTest            : Starting CashCardJsonTest using Java 21.0.3 with PID 12184 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T11:04:44.137-04:00  INFO 12184 --- [xchange] [    Test worker] peep.xchange.CashCardJsonTest            : No active profile set, falling back to 1 default profile: "default"
+2024-05-31T11:04:44.179-04:00  INFO 12184 --- [xchange] [    Test worker] peep.xchange.CashCardJsonTest            : Started CashCardJsonTest in 0.058 seconds (process running for 9.521)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
