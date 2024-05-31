@@ -20,6 +20,7 @@ class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(request -> request
+                .requestMatchers("/users/**").hasRole("ADMIN")
                 .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
                 .requestMatchers("/manifest.json").permitAll()
                 .anyRequest().authenticated()
@@ -51,6 +52,11 @@ class SecurityConfig {
             .password(passwordEncoder.encode("xyz789"))
             .roles("CARD-OWNER")
             .build();
-        return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards, kumar);
+        UserDetails admin = users
+            .username("admin")
+            .password(passwordEncoder.encode("admin123"))
+            .roles("ADMIN")  // This user can access the /users/** endpoints.
+            .build();
+        return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards, kumar, admin);
     }
 }
