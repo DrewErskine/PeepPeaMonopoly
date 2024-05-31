@@ -20,6 +20,7 @@ import net.minidev.json.JSONArray;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class UsersApplicationTests {
+
     @Autowired
     TestRestTemplate restTemplate;
 
@@ -83,7 +84,7 @@ class UsersApplicationTests {
         assertThat(userCount).isEqualTo(3);
 
         JSONArray usernames = documentContext.read("$..username");
-        assertThat(usernames).containsExactlyInAnyOrder("sarah1", "hank-owns-no-cards", "kumar2");
+        assertThat(usernames).containsExactlyInAnyOrder("sarah1", "drew_erskine");
     }
 
     @Test

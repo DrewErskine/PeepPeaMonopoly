@@ -2,13 +2,13 @@
     {
         "id": 1,
         "username": "drew_erskine",
-        "password": "password123",
+        "password": "erskine321",
         "role": "ROLE_USER"
     },
     {
         "id": 2,
         "username": "sara_huang",
-        "password": "password456",
+        "password": "huang321",
         "role": "ROLE_ADMIN"
     }
 ]

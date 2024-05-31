@@ -23,8 +23,8 @@ class UsersJsonTest {
     @BeforeEach
     void setUp() {
         users = new User[] {
-            new User(1L, "drew_erskine", "password123", "ROLE_USER"),
-            new User(2L, "sara_huang", "password456", "ROLE_ADMIN")
+            new User(1L, "drew_erskine", "erskine321", "ROLE_USER"),
+            new User(2L, "sara_huang", "huang321", "ROLE_ADMIN")
         };
     }
 
@@ -40,7 +40,7 @@ class UsersJsonTest {
                 .isEqualTo("drew_erskine");
         assertThat(json.write(user)).hasJsonPathStringValue("@.password");
         assertThat(json.write(user)).extractingJsonPathStringValue("@.password")
-                .isEqualTo("password123");
+                .isEqualTo("erskine321");
         assertThat(json.write(user)).hasJsonPathStringValue("@.role");
         assertThat(json.write(user)).extractingJsonPathStringValue("@.role")
                 .isEqualTo("ROLE_USER");
@@ -52,16 +52,15 @@ class UsersJsonTest {
                 {
                     "id": 1,
                     "username": "drew_erskine",
-                    "password": "password123", 
+                    "password": "sara_huang", 
                     "role": "ROLE_USER"
                 }
                 """;
-        assertThat(json.parse(expected))
-                .isEqualTo(new User(1L, "drew_erskine", "password123", "ROLE_USER"));
-        assertThat(json.parseObject(expected).getId()).isEqualTo(1L);
-        assertThat(json.parseObject(expected).getUsername()).isEqualTo("drew_erskine");
-        assertThat(json.parseObject(expected).getPassword()).isEqualTo("password123");
-        assertThat(json.parseObject(expected).getRole()).isEqualTo("ROLE_USER");
+        User deserializedUser = json.parseObject(expected);
+        assertThat(deserializedUser.getId()).isEqualTo(1L);
+        assertThat(deserializedUser.getUsername()).isEqualTo("drew_erskine");
+        assertThat(deserializedUser.getPassword()).isEqualTo("sara_huang");
+        assertThat(deserializedUser.getRole()).isEqualTo("ROLE_USER");
     }
 
     @Test
@@ -73,8 +72,8 @@ class UsersJsonTest {
     void userListDeserializationTest() throws IOException {
         String expected = """
                 [
-                     {"id": 1, "username": "drew_erskine", "password": "password123", "role": "ROLE_USER"},
-                     {"id": 2, "username": "sara_huang", "password": "password456", "role": "ROLE_ADMIN"}
+                     {"id": 1, "username": "drew_erskine", "password": "erskine321", "role": "ROLE_USER"},
+                     {"id": 2, "username": "sara_huang", "password": "huang321", "role": "ROLE_ADMIN"}
                 ]
                 """;
         User[] deserializedUsers = jsonList.parseObject(expected);

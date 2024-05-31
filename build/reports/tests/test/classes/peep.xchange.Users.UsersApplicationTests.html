@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UsersApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UsersApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/peep.xchange.Users.html">peep.xchange.Users</a> &gt; UsersApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">9</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">9</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.470s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="shouldCreateANewUser()"></a>
+<h3 class="failures">shouldCreateANewUser()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 201 CREATED
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldCreateANewUser(UsersApplicationTests.java:59)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldDeleteAnExistingUser()"></a>
+<h3 class="failures">shouldDeleteAnExistingUser()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 204 NO_CONTENT
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldDeleteAnExistingUser(UsersApplicationTests.java:127)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldNotAllowDeletionOfUsersTheyDoNotOwn()"></a>
+<h3 class="failures">shouldNotAllowDeletionOfUsersTheyDoNotOwn()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 403 FORBIDDEN
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldNotAllowDeletionOfUsersTheyDoNotOwn(UsersApplicationTests.java:147)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldNotDeleteAUserThatDoesNotExist()"></a>
+<h3 class="failures">shouldNotDeleteAUserThatDoesNotExist()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 404 NOT_FOUND
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldNotDeleteAUserThatDoesNotExist(UsersApplicationTests.java:139)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldNotReturnAUserWithAnUnknownId()"></a>
+<h3 class="failures">shouldNotReturnAUserWithAnUnknownId()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 404 NOT_FOUND
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldNotReturnAUserWithAnUnknownId(UsersApplicationTests.java:48)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldNotUpdateAUserThatDoesNotExist()"></a>
+<h3 class="failures">shouldNotUpdateAUserThatDoesNotExist()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 404 NOT_FOUND
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldNotUpdateAUserThatDoesNotExist(UsersApplicationTests.java:118)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldReturnAUserWhenDataIsSaved()"></a>
+<h3 class="failures">shouldReturnAUserWhenDataIsSaved()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 200 OK
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldReturnAUserWhenDataIsSaved(UsersApplicationTests.java:32)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldReturnAllUsersWhenListIsRequested()"></a>
+<h3 class="failures">shouldReturnAllUsersWhenListIsRequested()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 200 OK
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldReturnAllUsersWhenListIsRequested(UsersApplicationTests.java:80)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="shouldUpdateAnExistingUser()"></a>
+<h3 class="failures">shouldUpdateAnExistingUser()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: 
+expected: 204 NO_CONTENT
+ but was: 401 UNAUTHORIZED
+	at java.base@21.0.3/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base@21.0.3/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at app//peep.xchange.Users.UsersApplicationTests.shouldUpdateAnExistingUser(UsersApplicationTests.java:98)
+	at java.base@21.0.3/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.3/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">shouldCreateANewUser()</td>
+<td class="failures">0.080s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldDeleteAnExistingUser()</td>
+<td class="failures">0.119s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldNotAllowDeletionOfUsersTheyDoNotOwn()</td>
+<td class="failures">0.058s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldNotDeleteAUserThatDoesNotExist()</td>
+<td class="failures">0.062s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldNotReturnAUserWithAnUnknownId()</td>
+<td class="failures">0.062s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldNotUpdateAUserThatDoesNotExist()</td>
+<td class="failures">0.085s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldReturnAUserWhenDataIsSaved()</td>
+<td class="failures">0.059s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldReturnAllUsersWhenListIsRequested()</td>
+<td class="failures">0.825s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">shouldUpdateAnExistingUser()</td>
+<td class="failures">0.120s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>17:58:16.641 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [peep.xchange.Users.UsersApplicationTests]: UsersApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:58:16.780 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.Users.UsersApplicationTests
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T17:58:17.165-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : Starting UsersApplicationTests using Java 21.0.3 with PID 16932 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T17:58:17.166-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-31T17:58:17.969-04:00  INFO 16932 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T17:58:18.006-04:00  INFO 16932 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 2 JDBC repository interfaces.
+2024-05-31T17:58:18.635-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T17:58:18.647-04:00  INFO 16932 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T17:58:18.648-04:00  INFO 16932 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T17:58:18.710-04:00  INFO 16932 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T17:58:18.710-04:00  INFO 16932 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1526 ms
+2024-05-31T17:58:19.067-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-31T17:58:19.304-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:cb80cbc3-d5ee-405e-8ef6-6eb259e10a79 user=SA
+2024-05-31T17:58:19.307-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-31T17:58:20.240-04:00  INFO 16932 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T17:58:20.331-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T17:58:20.867-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T17:58:21.024-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c7673ae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@113c4ad6, org.springframework.security.web.context.SecurityContextHolderFilter@1293f8d7, org.springframework.security.web.header.HeaderWriterFilter@7816454d, org.springframework.web.filter.CorsFilter@7be859de, org.springframework.security.web.authentication.logout.LogoutFilter@b787274, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64ef2719, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@335896bd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8585cdd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40fcaae7, org.springframework.security.web.access.ExceptionTranslationFilter@78e97d4d, org.springframework.security.web.access.intercept.AuthorizationFilter@6516181f]
+2024-05-31T17:58:21.829-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 24348 (http) with context path '/'
+2024-05-31T17:58:21.843-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : Started UsersApplicationTests in 4.935 seconds (process running for 5.976)
+2024-05-31T17:58:22.639-04:00  INFO 16932 --- [xchange] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T17:58:22.639-04:00  INFO 16932 --- [xchange] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T17:58:22.640-04:00  INFO 16932 --- [xchange] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-31T17:58:23.228-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-31T17:58:23.233-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T17:58:23.267-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : Starting UsersApplicationTests using Java 21.0.3 with PID 16932 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T17:58:23.267-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-31T17:58:23.500-04:00  INFO 16932 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T17:58:23.507-04:00  INFO 16932 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JDBC repository interfaces.
+2024-05-31T17:58:23.563-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T17:58:23.564-04:00  INFO 16932 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T17:58:23.565-04:00  INFO 16932 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T17:58:23.588-04:00  INFO 16932 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T17:58:23.588-04:00  INFO 16932 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 318 ms
+2024-05-31T17:58:23.644-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-31T17:58:23.646-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:eff1f2fa-6a29-4710-bcb6-b2693fd015be user=SA
+2024-05-31T17:58:23.647-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-31T17:58:23.851-04:00  INFO 16932 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T17:58:23.859-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T17:58:23.934-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T17:58:23.940-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55854382, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7843b65e, org.springframework.security.web.context.SecurityContextHolderFilter@7a458c73, org.springframework.security.web.header.HeaderWriterFilter@1c294a17, org.springframework.web.filter.CorsFilter@4d6f951a, org.springframework.security.web.authentication.logout.LogoutFilter@11703cc8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4583a186, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47a72c32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@112f8f8f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15b882a0, org.springframework.security.web.access.ExceptionTranslationFilter@6a77953c, org.springframework.security.web.access.intercept.AuthorizationFilter@2f6ede9]
+2024-05-31T17:58:23.990-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 24356 (http) with context path '/'
+2024-05-31T17:58:23.998-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : Started UsersApplicationTests in 0.757 seconds (process running for 8.132)
+2024-05-31T17:58:24.005-04:00  INFO 16932 --- [xchange] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T17:58:24.006-04:00  INFO 16932 --- [xchange] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T17:58:24.006-04:00  INFO 16932 --- [xchange] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-31T17:58:24.116-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-05-31T17:58:24.117-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T17:58:24.145-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : Starting UsersApplicationTests using Java 21.0.3 with PID 16932 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T17:58:24.145-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-31T17:58:24.345-04:00  INFO 16932 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T17:58:24.352-04:00  INFO 16932 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JDBC repository interfaces.
+2024-05-31T17:58:24.397-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T17:58:24.398-04:00  INFO 16932 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T17:58:24.398-04:00  INFO 16932 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T17:58:24.416-04:00  INFO 16932 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T17:58:24.417-04:00  INFO 16932 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 269 ms
+2024-05-31T17:58:24.477-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-05-31T17:58:24.482-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:8adc408b-e106-4ed6-97d6-19394709e2a5 user=SA
+2024-05-31T17:58:24.482-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-05-31T17:58:24.700-04:00  INFO 16932 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T17:58:24.704-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T17:58:24.761-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T17:58:24.767-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11759e4a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@354a1239, org.springframework.security.web.context.SecurityContextHolderFilter@99ace98, org.springframework.security.web.header.HeaderWriterFilter@38950138, org.springframework.web.filter.CorsFilter@78fcc4ef, org.springframework.security.web.authentication.logout.LogoutFilter@6ee0ef34, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@78854721, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4104b6a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21dd405a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a12389e, org.springframework.security.web.access.ExceptionTranslationFilter@6c418f0b, org.springframework.security.web.access.intercept.AuthorizationFilter@41a18b54]
+2024-05-31T17:58:24.816-04:00  INFO 16932 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 24359 (http) with context path '/'
+2024-05-31T17:58:24.819-04:00  INFO 16932 --- [xchange] [    Test worker] p.xchange.Users.UsersApplicationTests    : Started UsersApplicationTests in 0.697 seconds (process running for 8.953)
+2024-05-31T17:58:24.825-04:00  INFO 16932 --- [xchange] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T17:58:24.826-04:00  INFO 16932 --- [xchange] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T17:58:24.826-04:00  INFO 16932 --- [xchange] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-31T17:58:24.934-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-05-31T17:58:24.935-04:00  INFO 16932 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+</pre>
+</span>
+</div>
+<div id="tab3" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (C:\Users\Dmers\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.16\4a451ee6484abac3a498df0f3b33ed00a6fced4d\byte-buddy-agent-1.14.16.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.7</a> at May 31, 2024, 5:58:25 PM</p>
+</div>
+</div>
+</body>
+</html>
