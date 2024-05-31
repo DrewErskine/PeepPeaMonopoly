@@ -1,4 +1,3 @@
-// src/components/common/LoginForm.js
 import React, { useState } from 'react';
 import './LoginForm.css';
 

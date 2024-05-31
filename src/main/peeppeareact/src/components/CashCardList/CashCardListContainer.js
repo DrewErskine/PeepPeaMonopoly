@@ -1,6 +1,5 @@
-// src/components/CashCardListContainer.js
 import React, { useEffect, useState } from 'react';
-import apiClient from '../../api/apiClient.js';
+import apiClient from '../../api/apiClient';
 import CashCardList from './CashCardList';
 
 const CashCardListContainer = () => {

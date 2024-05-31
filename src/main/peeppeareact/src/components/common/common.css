@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.login-button {
+.login-button, .account-button {
   background-color: #b38181; /* Darker pastel purple */
   color: white;
   border: none;
@@ -24,7 +24,7 @@
   font-size: 16px;
 }
 
-.login-button:hover {
+.login-button:hover, .account-button:hover {
   background-color: #9f6b6b; /* Even darker pastel purple */
 }
 

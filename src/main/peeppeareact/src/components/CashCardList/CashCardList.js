@@ -12,7 +12,7 @@ const CashCardList = ({ cards }) => {
         <div key={card.id}>
           <h3>{card.holderName}</h3>
           <p>ID: {card.id}</p>
-          <p>Balance: ${card.balance.toFixed(2)}</p>
+          <p>Balance: ${card.balance ? card.balance.toFixed(2) : 'N/A'}</p>
         </div>
       ))}
     </div>
