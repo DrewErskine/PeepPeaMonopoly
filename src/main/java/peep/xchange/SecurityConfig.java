@@ -21,6 +21,7 @@ class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(request -> request
                 .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
+                .requestMatchers("/manifest.json").permitAll()
                 .anyRequest().authenticated()
             )
             .httpBasic(Customizer.withDefaults());

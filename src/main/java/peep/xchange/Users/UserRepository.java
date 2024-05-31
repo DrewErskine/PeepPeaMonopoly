@@ -1,7 +1,18 @@
 package peep.xchange.Users;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Optional;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
     User findByUsername(String username);
+    Page<User> findAll(Pageable pageable);
+    boolean existsByUsername(String username);
+    Optional<User> findById(Long id);
+    User save(User user);
+    void deleteById(Long id);
 }

@@ -1,11 +1,11 @@
 package peep.xchange.Users;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -13,14 +13,13 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Autowired
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
-    public List<User> getAllUsers() {
-        return (List<User>) userRepository.findAll();
+    public Page<User> getAllUsers(PageRequest pageRequest) {
+        return userRepository.findAll(pageRequest);
     }
 
     public User getUserById(Long id) {
