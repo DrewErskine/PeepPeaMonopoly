@@ -7,14 +7,15 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  width: 91%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .login-form label {
   margin-bottom: 10px;
   color: #333;
   font-size: 16px;
-  padding-right: 6px;
 }
 
 .login-form input {
@@ -23,8 +24,8 @@
   font-size: 14px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  padding: 12px;
-  width: 90%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .login-form button {
@@ -36,7 +37,6 @@
   cursor: pointer;
   font-size: 16px;
   margin-top: 20px;
-  width: 100%;
 }
 
 .login-form button:hover {

@@ -28,6 +28,12 @@
   background-color: #9f6b6b; /* Even darker pastel purple */
 }
 
+.username-display {
+  margin-right: 20px;
+  font-weight: bold;
+  color: rgb(15, 125, 158);
+}
+
 .app-footer {
   background-color: #8b7e7e; /* Darker complementary color */
   color: white;

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './LoginForm.css';
-import { useAuth } from '../../AuthContext'; // Ensure useAuth is imported
+import { useAuth } from '../../AuthContext';
 
 const LoginForm = ({ onSubmit }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useAuth(); // Destructure login from useAuth
+  const { login } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,7 +26,7 @@ const LoginForm = ({ onSubmit }) => {
 
       console.log('Login response:', response);
       const { token } = response.data;
-      login(token); // Store the token using the login function from AuthContext
+      login(token, username); // Pass the username to login function
       setError('');
       if (onSubmit) onSubmit(token); // Call the onSubmit function passed as a prop
     } catch (err) {

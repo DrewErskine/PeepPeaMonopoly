@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="peep.xchange.Users.UserRepositoryTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-06-01T22:39:44" hostname="DREW" time="0.084">
+  <properties/>
+  <testcase name="testSaveUser()" classname="peep.xchange.Users.UserRepositoryTests" time="0.032"/>
+  <testcase name="testFindAll()" classname="peep.xchange.Users.UserRepositoryTests" time="0.032"/>
+  <testcase name="testFindByUsername()" classname="peep.xchange.Users.UserRepositoryTests" time="0.005"/>
+  <testcase name="testExistsByUsername()" classname="peep.xchange.Users.UserRepositoryTests" time="0.007"/>
+  <testcase name="testDeleteUser()" classname="peep.xchange.Users.UserRepositoryTests" time="0.005"/>
+  <system-out><![CDATA[  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-06-01T18:39:44.548-04:00  INFO 24024 --- [    Test worker] peep.xchange.Users.UserRepositoryTests   : Starting UserRepositoryTests using Java 21.0.3 with PID 24024 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-06-01T18:39:44.548-04:00  INFO 24024 --- [    Test worker] peep.xchange.Users.UserRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-06-01T18:39:44.649-04:00  INFO 24024 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-06-01T18:39:44.654-04:00  INFO 24024 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JDBC repository interface.
+2024-06-01T18:39:44.681-04:00  INFO 24024 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-06-01T18:39:44.764-04:00  INFO 24024 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:e2130a93-779a-4e07-85e1-033a2a643e7f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-06-01T18:39:44.858-04:00  INFO 24024 --- [    Test worker] peep.xchange.Users.UserRepositoryTests   : Started UserRepositoryTests in 0.335 seconds (process running for 14.318)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
