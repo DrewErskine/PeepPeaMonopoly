@@ -7,6 +7,7 @@ PeepMonopoly is a full-stack application developed using Spring Boot 3 for the b
 1. [Project Overview](#project-overview)
 2. [Spring Boot Application](#spring-boot-application)
 3. [PeeppeaReact Application](#peeppeareact-application)
+4. [Postman Ponus Points](#postman-ponus-points) - https://documenter.getpostman.com/view/33305065/2sA3QwapMe
 
 ---
 
