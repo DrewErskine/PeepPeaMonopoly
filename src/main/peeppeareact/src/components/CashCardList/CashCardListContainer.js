@@ -1,33 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import apiClient from '../../api/apiClient';
+import axios from 'axios';
 import CashCardList from './CashCardList';
 
 const CashCardListContainer = () => {
-  const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [cashCards, setCashCards] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    apiClient.get('/cashcards')
-      .then(response => {
-        setCards(response.data);
-        setLoading(false);
-      })
-      .catch(error => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
+    useEffect(() => {
+        const fetchCashCards = async () => {
+            try {
+                const token = localStorage.getItem('authToken'); // Get the token from local storage
+                const response = await axios.get('http://localhost:8080/cashcards', {
+                    headers: {
+                        'Authorization': `Bearer ${token}` // Include the token in the request headers
+                    }
+                });
+                setCashCards(response.data);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+        fetchCashCards();
+    }, []);
 
-  if (error) {
-    return <div>Error fetching cards: {error.message}</div>;
-  }
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
-  return <CashCardList cards={cards} />;
+    return <CashCardList cashCards={cashCards} />;
 };
 
 export default CashCardListContainer;

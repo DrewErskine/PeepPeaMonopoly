@@ -1,5 +1,8 @@
 package peep.xchange;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -11,6 +14,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration
 class SecurityConfig {
@@ -18,14 +27,27 @@ class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(request -> request
-                .requestMatchers("/users/**").hasRole("ADMIN")
-                .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
-                .requestMatchers("/manifest.json").permitAll()
-                .anyRequest().authenticated()
-            )
-            .httpBasic(Customizer.withDefaults());
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(request -> request
+                                .requestMatchers("/login", "/logout", "/h2-console/**").permitAll()
+                                .requestMatchers("/users/**").hasRole("ADMIN")
+                                .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
+                                .requestMatchers("/manifest.json").permitAll()
+                                .anyRequest().authenticated()
+                )
+                .formLogin(login -> login
+                        .loginProcessingUrl("/login")
+                        .successHandler(authenticationSuccessHandler())
+                        .failureHandler(authenticationFailureHandler())
+                        .permitAll())
+                .exceptionHandling(exception -> exception
+                        .authenticationEntryPoint((request, response, authException) -> {
+                            response.setContentType("application/json");
+                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                            response.getWriter().write("{\"error\": \"Unauthorized\"}");
+                        })
+                )                
+                .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 
@@ -37,26 +59,41 @@ class SecurityConfig {
     @Bean
     UserDetailsService testOnlyUsers(PasswordEncoder passwordEncoder) {
         User.UserBuilder users = User.builder();
-        UserDetails sarah = users
-            .username("sarah1")
-            .password(passwordEncoder.encode("abc123"))
-            .roles("CARD-OWNER")
-            .build();
-        UserDetails hankOwnsNoCards = users
-            .username("hank-owns-no-cards")
-            .password(passwordEncoder.encode("qrs456"))
-            .roles("NON-OWNER")
-            .build();
-        UserDetails kumar = users
-            .username("kumar2")
-            .password(passwordEncoder.encode("xyz789"))
-            .roles("CARD-OWNER")
-            .build();
         UserDetails admin = users
             .username("admin")
             .password(passwordEncoder.encode("admin123"))
-            .roles("ADMIN")  // This user can access the /users/** endpoints.
+            .roles("ADMIN") 
             .build();
-        return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards, kumar, admin);
+        UserDetails sara = users
+            .username("sara")
+            .password(passwordEncoder.encode("password"))
+            .roles("USER") 
+            .roles("CARD-OWNER")
+            .build();
+        return new InMemoryUserDetailsManager(admin, sara);
+    }
+
+    @Bean
+    public AuthenticationSuccessHandler authenticationSuccessHandler() {
+        return (request, response, authentication) -> {
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.setContentType("application/json;charset=UTF-8");
+
+            Map<String, String> responseData = new HashMap<>();
+            responseData.put("message", "Login successful");
+            responseData.put("token", "dummy-token"); 
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            response.getWriter().write(objectMapper.writeValueAsString(responseData));
+        };
+    }
+
+    @Bean
+    public AuthenticationFailureHandler authenticationFailureHandler() {
+        return (request, response, exception) -> {
+            response.setContentType("application/json");
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().write("{\"error\": \"Unauthorized\"}");
+        };
     }
 }

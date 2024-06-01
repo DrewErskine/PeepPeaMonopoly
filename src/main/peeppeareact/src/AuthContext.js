@@ -1,16 +1,23 @@
-import React, { createContext, useState, useContext } from 'react';
+// C:\Users\Dmers\Code\Spring\PeepMonopoly\src\main\peeppeareact\src\AuthContext.js
+import React, { createContext, useContext, useState } from 'react';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
+
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const login = () => {
+  const login = (token) => {
     setIsAuthenticated(true);
+    localStorage.setItem('authToken', token); // Store the token
   };
 
   const logout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem('authToken'); // Remove the token
   };
 
   return (
@@ -19,5 +26,3 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export const useAuth = () => useContext(AuthContext);

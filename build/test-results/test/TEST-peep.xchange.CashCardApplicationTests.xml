@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="peep.xchange.CashCardApplicationTests" tests="16" skipped="0" failures="0" errors="0" timestamp="2024-06-01T01:06:44" hostname="DREW" time="4.294">
+  <properties/>
+  <testcase name="shouldReturnASortedPageOfCashCards()" classname="peep.xchange.CashCardApplicationTests" time="0.953"/>
+  <testcase name="shouldNotAllowDeletionOfCashCardsTheyDoNotOwn()" classname="peep.xchange.CashCardApplicationTests" time="0.133"/>
+  <testcase name="shouldDeleteAnExistingCashCard()" classname="peep.xchange.CashCardApplicationTests" time="0.154"/>
+  <testcase name="shouldNotAllowAccessToCashCardsTheyDoNotOwn()" classname="peep.xchange.CashCardApplicationTests" time="0.116"/>
+  <testcase name="shouldNotUpdateACashCardThatIsOwnedBySomeoneElse()" classname="peep.xchange.CashCardApplicationTests" time="0.083"/>
+  <testcase name="shouldReturnACashCardWhenDataIsSaved()" classname="peep.xchange.CashCardApplicationTests" time="0.058"/>
+  <testcase name="shouldNotDeleteACashCardThatDoesNotExist()" classname="peep.xchange.CashCardApplicationTests" time="0.058"/>
+  <testcase name="shouldCreateANewCashCard()" classname="peep.xchange.CashCardApplicationTests" time="0.158"/>
+  <testcase name="shouldRejectUsersWhoAreNotCardOwners()" classname="peep.xchange.CashCardApplicationTests" time="0.111"/>
+  <testcase name="shouldReturnAPageOfCashCards()" classname="peep.xchange.CashCardApplicationTests" time="0.059"/>
+  <testcase name="shouldUpdateAnExistingCashCard()" classname="peep.xchange.CashCardApplicationTests" time="0.129"/>
+  <testcase name="shouldNotUpdateACashCardThatDoesNotExist()" classname="peep.xchange.CashCardApplicationTests" time="0.113"/>
+  <testcase name="shouldNotReturnACashCardWhenUsingBadCredentials()" classname="peep.xchange.CashCardApplicationTests" time="0.125"/>
+  <testcase name="shouldReturnAllCashCardsWhenListIsRequested()" classname="peep.xchange.CashCardApplicationTests" time="0.072"/>
+  <testcase name="shouldReturnASortedPageOfCashCardsWithNoParametersAndUseDefaultValues()" classname="peep.xchange.CashCardApplicationTests" time="0.057"/>
+  <testcase name="shouldNotReturnACashCardWithAnUnknownId()" classname="peep.xchange.CashCardApplicationTests" time="0.06"/>
+  <system-out><![CDATA[21:06:40.682 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [peep.xchange.CashCardApplicationTests]: CashCardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:06:40.787 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.CashCardApplicationTests
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T21:06:41.115-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 11960 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T21:06:41.116-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-05-31T21:06:41.798-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T21:06:41.833-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 2 JDBC repository interfaces.
+2024-05-31T21:06:42.365-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T21:06:42.378-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T21:06:42.378-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T21:06:42.433-04:00  INFO 11960 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T21:06:42.433-04:00  INFO 11960 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1301 ms
+2024-05-31T21:06:42.750-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-31T21:06:42.944-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:6e0869c9-b120-45f3-9292-baad56bc75b1 user=SA
+2024-05-31T21:06:42.946-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-31T21:06:43.778-04:00  INFO 11960 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T21:06:43.841-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T21:06:44.223-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T21:06:44.301-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7736c41e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f911d24, org.springframework.security.web.context.SecurityContextHolderFilter@7cd25bf5, org.springframework.security.web.header.HeaderWriterFilter@79e16dd9, org.springframework.web.filter.CorsFilter@3de383f7, org.springframework.security.web.authentication.logout.LogoutFilter@6f2864c3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@57cff804, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18b30951, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6949cead, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33ccead, org.springframework.security.web.access.ExceptionTranslationFilter@5e3405a1, org.springframework.security.web.access.intercept.AuthorizationFilter@5d94ac8a]
+2024-05-31T21:06:44.682-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 29338 (http) with context path '/'
+2024-05-31T21:06:44.693-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 3.792 seconds (process running for 4.718)
+2024-05-31T21:06:45.405-04:00  INFO 11960 --- [xchange] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T21:06:45.405-04:00  INFO 11960 --- [xchange] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T21:06:45.406-04:00  INFO 11960 --- [xchange] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-31T21:06:45.419-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /cashcards?page=0&size=1&sort=amount,desc
+2024-05-31T21:06:45.527-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:45.529-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-1] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:45.534-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /cashcards?page=0&size=1&sort=amount,desc
+2024-05-31T21:06:45.763-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-2] o.s.security.web.FilterChainProxy        : Securing DELETE /cashcards/102
+2024-05-31T21:06:45.813-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:45.813-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-2] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:45.814-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-2] o.s.security.web.FilterChainProxy        : Secured DELETE /cashcards/102
+2024-05-31T21:06:45.828-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/102
+2024-05-31T21:06:45.878-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:45.878-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-3] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=kumar2, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:45.879-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/102
+2024-05-31T21:06:45.891-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-4] o.s.security.web.FilterChainProxy        : Securing DELETE /cashcards/99
+2024-05-31T21:06:45.940-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:45.941-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-4] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:45.941-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-4] o.s.security.web.FilterChainProxy        : Secured DELETE /cashcards/99
+2024-05-31T21:06:45.969-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/99
+2024-05-31T21:06:46.019-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:46.019-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-5] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:46.020-04:00 DEBUG 11960 --- [xchange] [o-auto-1-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/99
+2024-05-31T21:06:46.034-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-31T21:06:46.037-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T21:06:46.062-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 11960 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T21:06:46.062-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-05-31T21:06:46.259-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T21:06:46.266-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 2 JDBC repository interfaces.
+2024-05-31T21:06:46.324-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T21:06:46.325-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T21:06:46.326-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T21:06:46.351-04:00  INFO 11960 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T21:06:46.352-04:00  INFO 11960 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 289 ms
+2024-05-31T21:06:46.394-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-31T21:06:46.396-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:c6487b1c-1076-473b-b944-6c31c873da58 user=SA
+2024-05-31T21:06:46.396-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-31T21:06:46.641-04:00  INFO 11960 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T21:06:46.644-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T21:06:46.688-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T21:06:46.693-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3956df0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@739500b8, org.springframework.security.web.context.SecurityContextHolderFilter@3423f353, org.springframework.security.web.header.HeaderWriterFilter@55f29d39, org.springframework.web.filter.CorsFilter@e8ce5b1, org.springframework.security.web.authentication.logout.LogoutFilter@5c940e28, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@454f6cc5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c50d1b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@365c8a47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@301b89e1, org.springframework.security.web.access.ExceptionTranslationFilter@d96f413, org.springframework.security.web.access.intercept.AuthorizationFilter@41f3f64]
+2024-05-31T21:06:46.735-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 29343 (http) with context path '/'
+2024-05-31T21:06:46.739-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.696 seconds (process running for 6.764)
+2024-05-31T21:06:46.746-04:00  INFO 11960 --- [xchange] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T21:06:46.746-04:00  INFO 11960 --- [xchange] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T21:06:46.747-04:00  INFO 11960 --- [xchange] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-31T21:06:46.747-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/102
+2024-05-31T21:06:46.847-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:46.847-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-1] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:46.848-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/102
+2024-05-31T21:06:46.862-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-2] o.s.security.web.FilterChainProxy        : Securing PUT /cashcards/102
+2024-05-31T21:06:46.911-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:46.912-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-2] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:46.912-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-2] o.s.security.web.FilterChainProxy        : Secured PUT /cashcards/102
+2024-05-31T21:06:46.945-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/99
+2024-05-31T21:06:46.994-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:46.994-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-3] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:46.995-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/99
+2024-05-31T21:06:47.004-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-4] o.s.security.web.FilterChainProxy        : Securing DELETE /cashcards/99999
+2024-05-31T21:06:47.053-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:47.053-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-4] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:47.054-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-4] o.s.security.web.FilterChainProxy        : Secured DELETE /cashcards/99999
+2024-05-31T21:06:47.077-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /cashcards
+2024-05-31T21:06:47.126-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:47.127-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-5] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:47.127-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /cashcards
+2024-05-31T21:06:47.158-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/1
+2024-05-31T21:06:47.207-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:47.207-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-6] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:47.208-04:00 DEBUG 11960 --- [xchange] [o-auto-2-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/1
+2024-05-31T21:06:47.215-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-05-31T21:06:47.216-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T21:06:47.235-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 11960 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T21:06:47.235-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-05-31T21:06:47.401-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T21:06:47.407-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JDBC repository interfaces.
+2024-05-31T21:06:47.444-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T21:06:47.445-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T21:06:47.445-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T21:06:47.459-04:00  INFO 11960 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T21:06:47.459-04:00  INFO 11960 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 222 ms
+2024-05-31T21:06:47.487-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-05-31T21:06:47.489-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:b8914e14-e284-4b09-af8f-5d26c7eb20d0 user=SA
+2024-05-31T21:06:47.489-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-05-31T21:06:47.719-04:00  INFO 11960 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T21:06:47.722-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T21:06:47.759-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T21:06:47.763-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21f48f6c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16745ba7, org.springframework.security.web.context.SecurityContextHolderFilter@3e3b41cb, org.springframework.security.web.header.HeaderWriterFilter@7fac3ce0, org.springframework.web.filter.CorsFilter@c9518ee, org.springframework.security.web.authentication.logout.LogoutFilter@204b1903, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@598f065f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14bb16ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5acf51d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d094add, org.springframework.security.web.access.ExceptionTranslationFilter@6984f7d1, org.springframework.security.web.access.intercept.AuthorizationFilter@4ceac22d]
+2024-05-31T21:06:47.799-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 29346 (http) with context path '/'
+2024-05-31T21:06:47.802-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.582 seconds (process running for 7.827)
+2024-05-31T21:06:47.808-04:00  INFO 11960 --- [xchange] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T21:06:47.808-04:00  INFO 11960 --- [xchange] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T21:06:47.808-04:00  INFO 11960 --- [xchange] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-31T21:06:47.809-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/99
+2024-05-31T21:06:47.907-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:47.907-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-1] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=hank-owns-no-cards, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_NON-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_NON-OWNER]]
+2024-05-31T21:06:47.908-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/99
+2024-05-31T21:06:47.919-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /cashcards?page=0&size=1
+2024-05-31T21:06:47.968-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:47.968-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-2] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:47.969-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /cashcards?page=0&size=1
+2024-05-31T21:06:47.979-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-3] o.s.security.web.FilterChainProxy        : Securing PUT /cashcards/99
+2024-05-31T21:06:48.028-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:48.029-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-3] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:48.029-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-3] o.s.security.web.FilterChainProxy        : Secured PUT /cashcards/99
+2024-05-31T21:06:48.045-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/99
+2024-05-31T21:06:48.095-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:48.095-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-4] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:48.096-04:00 DEBUG 11960 --- [xchange] [o-auto-3-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/99
+2024-05-31T21:06:48.103-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-05-31T21:06:48.104-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-31T21:06:48.119-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 11960 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-05-31T21:06:48.119-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-05-31T21:06:48.267-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-31T21:06:48.274-04:00  INFO 11960 --- [xchange] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JDBC repository interfaces.
+2024-05-31T21:06:48.313-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-05-31T21:06:48.314-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T21:06:48.314-04:00  INFO 11960 --- [xchange] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-05-31T21:06:48.329-04:00  INFO 11960 --- [xchange] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T21:06:48.329-04:00  INFO 11960 --- [xchange] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 209 ms
+2024-05-31T21:06:48.358-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-05-31T21:06:48.360-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:78461c91-2c8e-44a0-b95a-97f8534291e8 user=SA
+2024-05-31T21:06:48.361-04:00  INFO 11960 --- [xchange] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-05-31T21:06:48.588-04:00  INFO 11960 --- [xchange] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-05-31T21:06:48.591-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-31T21:06:48.622-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-05-31T21:06:48.626-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@23d1090, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46c6541f, org.springframework.security.web.context.SecurityContextHolderFilter@7f36b021, org.springframework.security.web.header.HeaderWriterFilter@5e3934db, org.springframework.web.filter.CorsFilter@aba3735, org.springframework.security.web.authentication.logout.LogoutFilter@791b9887, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27476b5f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45a9f3d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@246ee6d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16bba8ae, org.springframework.security.web.access.ExceptionTranslationFilter@14feab02, org.springframework.security.web.access.intercept.AuthorizationFilter@202d83b9]
+2024-05-31T21:06:48.662-04:00  INFO 11960 --- [xchange] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 29350 (http) with context path '/'
+2024-05-31T21:06:48.664-04:00  INFO 11960 --- [xchange] [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.557 seconds (process running for 8.689)
+2024-05-31T21:06:48.671-04:00  INFO 11960 --- [xchange] [o-auto-4-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T21:06:48.671-04:00  INFO 11960 --- [xchange] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T21:06:48.671-04:00  INFO 11960 --- [xchange] [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-31T21:06:48.672-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-1] o.s.security.web.FilterChainProxy        : Securing PUT /cashcards/99999
+2024-05-31T21:06:48.770-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-1] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:48.771-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-1] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:48.771-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-1] o.s.security.web.FilterChainProxy        : Secured PUT /cashcards/99999
+2024-05-31T21:06:48.781-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/99
+2024-05-31T21:06:48.831-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to find user 'BAD-USER'
+2024-05-31T21:06:48.833-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] o.s.s.w.a.www.BasicAuthenticationFilter  : Failed to process authentication request
+
+org.springframework.security.authentication.BadCredentialsException: Bad credentials
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:141) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.ObservationAuthenticationManager.lambda$authenticate$1(ObservationAuthenticationManager.java:54) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:565) ~[micrometer-observation-1.13.0.jar:1.13.0]
+	at org.springframework.security.authentication.ObservationAuthenticationManager.authenticate(ObservationAuthenticationManager.java:53) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:187) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-05-31T21:06:48.836-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] s.w.a.DelegatingAuthenticationEntryPoint : Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-05-31T21:06:48.836-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] s.w.a.DelegatingAuthenticationEntryPoint : No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@4e947264
+2024-05-31T21:06:48.841-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-05-31T21:06:48.842-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-05-31T21:06:48.842-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] s.w.a.DelegatingAuthenticationEntryPoint : Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-05-31T21:06:48.842-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-2] s.w.a.DelegatingAuthenticationEntryPoint : No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@4e947264
+2024-05-31T21:06:48.849-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/99
+2024-05-31T21:06:48.899-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to authenticate since password does not match stored value
+2024-05-31T21:06:48.899-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] o.s.s.w.a.www.BasicAuthenticationFilter  : Failed to process authentication request
+
+org.springframework.security.authentication.BadCredentialsException: Bad credentials
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks(DaoAuthenticationProvider.java:93) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:147) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.authentication.ObservationAuthenticationManager.lambda$authenticate$1(ObservationAuthenticationManager.java:54) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at io.micrometer.observation.Observation.observe(Observation.java:565) ~[micrometer-observation-1.13.0.jar:1.13.0]
+	at org.springframework.security.authentication.ObservationAuthenticationManager.authenticate(ObservationAuthenticationManager.java:53) ~[spring-security-core-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:187) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-05-31T21:06:48.900-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] s.w.a.DelegatingAuthenticationEntryPoint : Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-05-31T21:06:48.900-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] s.w.a.DelegatingAuthenticationEntryPoint : No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@4e947264
+2024-05-31T21:06:48.901-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-05-31T21:06:48.901-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-05-31T21:06:48.902-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] s.w.a.DelegatingAuthenticationEntryPoint : Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-05-31T21:06:48.902-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-3] s.w.a.DelegatingAuthenticationEntryPoint : No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@4e947264
+2024-05-31T21:06:48.907-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /cashcards
+2024-05-31T21:06:48.956-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-4] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:48.956-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-4] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:48.956-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /cashcards
+2024-05-31T21:06:48.979-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /cashcards
+2024-05-31T21:06:49.028-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:49.028-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-5] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:49.028-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /cashcards
+2024-05-31T21:06:49.036-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /cashcards/1000
+2024-05-31T21:06:49.086-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-6] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-05-31T21:06:49.086-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-6] o.s.s.w.a.www.BasicAuthenticationFilter  : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=sarah1, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CARD-OWNER]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_CARD-OWNER]]
+2024-05-31T21:06:49.086-04:00 DEBUG 11960 --- [xchange] [o-auto-4-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /cashcards/1000
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Dmers\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.16\4a451ee6484abac3a498df0f3b33ed00a6fced4d\byte-buddy-agent-1.14.16.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
