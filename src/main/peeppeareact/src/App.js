@@ -1,13 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
-import CashCardListContainer from "./components/CashCardList/CashCardListContainer";
-import CashCardDetailContainer from "./components/CashCardDetail/CashCardDetailContainer";
-import CashCardFormContainer from "./components/CashCardForm/CashCardFormContainer";
-import Login from "./components/common/Login";
-import PrivateRoute from "./components/PrivateRoute";
-import "./App.css";
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+import CashCardListContainer from './components/CashCardList/CashCardListContainer';
+import Login from './components/common/Login';
+import Home from './components/home/Home';
+import PrivateRoute from './components/PrivateRoute';
+import './App.css';
 
 function App() {
   return (
@@ -26,18 +26,10 @@ function App() {
               }
             />
             <Route
-              path="/cashcards/new"
+              path="/home"
               element={
                 <PrivateRoute>
-                  <CashCardFormContainer />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/cashcards/:id"
-              element={
-                <PrivateRoute>
-                  <CashCardDetailContainer />
+                  <Home />
                 </PrivateRoute>
               }
             />
@@ -45,7 +37,7 @@ function App() {
               path="/"
               element={
                 <PrivateRoute>
-                  <CashCardListContainer />
+                  <Home />
                 </PrivateRoute>
               }
             />

@@ -1,4 +1,6 @@
+// src/components/common/Header.js
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Model from './Model';
 import LoginForm from './LoginForm';
 import { useAuth } from '../../AuthContext';
@@ -6,7 +8,8 @@ import './common.css';
 
 const Header = () => {
   const [showModel, setShowModel] = useState(false);
-  const { isAuthenticated, login, logout } = useAuth();
+  const { isAuthenticated, username, login, logout } = useAuth();
+  const location = useLocation();
 
   const handleLoginClick = () => {
     setShowModel(true);
@@ -34,7 +37,7 @@ const Header = () => {
 
       const data = await response.json();
       console.log('Login response:', data);
-      login(data.token);
+      login(data.token, data.username);
       setShowModel(false);
     } catch (error) {
       console.error('Login error:', error);
@@ -44,6 +47,7 @@ const Header = () => {
   const handleLogout = () => {
     logout();
     localStorage.removeItem('authToken');
+    localStorage.removeItem('username');
   };
 
   return (
@@ -51,9 +55,14 @@ const Header = () => {
       <div className="header-content">
         <h1>Peep Monopoly Cash Cards</h1>
         {isAuthenticated ? (
-          <button className="account-button" onClick={handleLogout}>Account</button>
+          <>
+            <span className="username-display">{username}</span>
+            <button className="account-button" onClick={handleLogout}>Logout</button>
+          </>
         ) : (
-          <button className="login-button" onClick={handleLoginClick}>Login</button>
+          location.pathname !== '/login' && (
+            <button className="login-button" onClick={handleLoginClick}>Login</button>
+          )
         )}
       </div>
       <Model show={showModel} onClose={handleCloseModel}>

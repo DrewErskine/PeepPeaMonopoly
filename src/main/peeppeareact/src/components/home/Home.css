@@ -1,0 +1,54 @@
+/* src/components/home/Home.css */
+.home-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5; /* Light background */
+  min-height: 80vh;
+}
+
+.home-container h1 {
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+.home-container p {
+  color: #555; /* Medium text color */
+  margin-bottom: 20px;
+}
+
+.user-info {
+  background-color: #fff; /* White background for user info */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.user-info h2 {
+  color: #333; /* Dark text color */
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  color: #666; /* Slightly lighter text color */
+  margin: 5px 0;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.link-button {
+  background-color: #d4a5a5; /* Pastel purple */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.link-button:hover {
+  background-color: #b38181; /* Darker pastel purple */
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CashCardApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CashCardApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/peep.xchange.html">peep.xchange</a> &gt; CashCardApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">16</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.475s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">shouldCreateANewCashCard()</td>
+<td class="success">0.205s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldDeleteAnExistingCashCard()</td>
+<td class="success">0.149s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotAllowAccessToCashCardsTheyDoNotOwn()</td>
+<td class="success">0.113s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotAllowDeletionOfCashCardsTheyDoNotOwn()</td>
+<td class="success">0.134s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotDeleteACashCardThatDoesNotExist()</td>
+<td class="success">0.058s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotReturnACashCardWhenUsingBadCredentials()</td>
+<td class="success">0.111s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotReturnACashCardWithAnUnknownId()</td>
+<td class="success">0.058s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotUpdateACashCardThatDoesNotExist()</td>
+<td class="success">0.112s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldNotUpdateACashCardThatIsOwnedBySomeoneElse()</td>
+<td class="success">0.080s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldRejectUsersWhoAreNotCardOwners()</td>
+<td class="success">0.121s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnACashCardWhenDataIsSaved()</td>
+<td class="success">0.059s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnAPageOfCashCards()</td>
+<td class="success">0.062s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnASortedPageOfCashCards()</td>
+<td class="success">0.954s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnASortedPageOfCashCardsWithNoParametersAndUseDefaultValues()</td>
+<td class="success">0.060s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldReturnAllCashCardsWhenListIsRequested()</td>
+<td class="success">0.068s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shouldUpdateAnExistingCashCard()</td>
+<td class="success">0.131s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-06-01T19:48:46.125-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 3836 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-06-01T19:48:46.126-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-06-01T19:48:47.293-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-06-01T19:48:47.336-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 2 JDBC repository interfaces.
+2024-06-01T19:48:48.107-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-06-01T19:48:48.124-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-01T19:48:48.125-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-01T19:48:48.199-04:00  INFO 3836 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-01T19:48:48.200-04:00  INFO 3836 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2048 ms
+2024-06-01T19:48:48.598-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-01T19:48:48.842-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fac2d699-b2e2-48ff-8bdd-fd0471f131cd user=SA
+2024-06-01T19:48:48.845-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-01T19:48:50.122-04:00  INFO 3836 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-06-01T19:48:50.230-04:00  INFO 3836 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-06-01T19:48:50.789-04:00  INFO 3836 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-01T19:48:50.933-04:00  INFO 3836 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17477bbb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40fee459, org.springframework.security.web.context.SecurityContextHolderFilter@516037be, org.springframework.security.web.header.HeaderWriterFilter@2419a5db, org.springframework.web.filter.CorsFilter@bcd9ed6, org.springframework.security.web.authentication.logout.LogoutFilter@37b470df, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@575c23f1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2dacda9a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@336070ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6be80629, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ffa0f38, org.springframework.security.web.access.ExceptionTranslationFilter@2a73a64f, org.springframework.security.web.access.intercept.AuthorizationFilter@48333b12]
+2024-06-01T19:48:51.523-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 37620 (http) with context path '/'
+2024-06-01T19:48:51.548-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 5.673 seconds (process running for 6.705)
+2024-06-01T19:48:52.308-04:00  INFO 3836 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-01T19:48:52.308-04:00  INFO 3836 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-01T19:48:52.309-04:00  INFO 3836 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-01T19:48:52.935-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-01T19:48:52.938-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-06-01T19:48:52.965-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 3836 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-06-01T19:48:52.965-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-06-01T19:48:53.208-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-06-01T19:48:53.217-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JDBC repository interfaces.
+2024-06-01T19:48:53.276-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-06-01T19:48:53.278-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-01T19:48:53.279-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-01T19:48:53.297-04:00  INFO 3836 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-01T19:48:53.297-04:00  INFO 3836 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 330 ms
+2024-06-01T19:48:53.349-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-06-01T19:48:53.351-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:872b205c-4d1f-42ff-8d7b-5f3af667d74c user=SA
+2024-06-01T19:48:53.352-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-06-01T19:48:53.653-04:00  INFO 3836 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-06-01T19:48:53.658-04:00  INFO 3836 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-06-01T19:48:53.714-04:00  INFO 3836 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-01T19:48:53.724-04:00  INFO 3836 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6cb1da13, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2250deae, org.springframework.security.web.context.SecurityContextHolderFilter@7e584f3c, org.springframework.security.web.header.HeaderWriterFilter@420c9959, org.springframework.web.filter.CorsFilter@49e8548d, org.springframework.security.web.authentication.logout.LogoutFilter@683218c8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c3eeda4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64b242b3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f113867, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72cf159f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3fb920d9, org.springframework.security.web.access.ExceptionTranslationFilter@441d3ddf, org.springframework.security.web.access.intercept.AuthorizationFilter@345f4e0d]
+2024-06-01T19:48:53.771-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 37625 (http) with context path '/'
+2024-06-01T19:48:53.779-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.835 seconds (process running for 8.938)
+2024-06-01T19:48:53.786-04:00  INFO 3836 --- [o-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-01T19:48:53.786-04:00  INFO 3836 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-01T19:48:53.787-04:00  INFO 3836 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-01T19:48:54.296-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-06-01T19:48:54.298-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-06-01T19:48:54.318-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 3836 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-06-01T19:48:54.319-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-06-01T19:48:54.522-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-06-01T19:48:54.528-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JDBC repository interfaces.
+2024-06-01T19:48:54.572-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-06-01T19:48:54.573-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-01T19:48:54.574-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-01T19:48:54.589-04:00  INFO 3836 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-01T19:48:54.589-04:00  INFO 3836 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 267 ms
+2024-06-01T19:48:54.625-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-06-01T19:48:54.627-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:136e9c4e-ba53-4002-93c2-9875e3e4693c user=SA
+2024-06-01T19:48:54.627-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-06-01T19:48:54.921-04:00  INFO 3836 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-06-01T19:48:54.925-04:00  INFO 3836 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-06-01T19:48:54.971-04:00  INFO 3836 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-01T19:48:54.979-04:00  INFO 3836 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@336b6e93, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40fd9358, org.springframework.security.web.context.SecurityContextHolderFilter@19cee7ed, org.springframework.security.web.header.HeaderWriterFilter@f6921b7, org.springframework.web.filter.CorsFilter@43b41cb9, org.springframework.security.web.authentication.logout.LogoutFilter@72117fc0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d63c523, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64f55630, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e8e0052, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a2ce458, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d3e9629, org.springframework.security.web.access.ExceptionTranslationFilter@466a5b80, org.springframework.security.web.access.intercept.AuthorizationFilter@71904ea8]
+2024-06-01T19:48:55.021-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 37629 (http) with context path '/'
+2024-06-01T19:48:55.029-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.727 seconds (process running for 10.187)
+2024-06-01T19:48:55.034-04:00  INFO 3836 --- [o-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-01T19:48:55.034-04:00  INFO 3836 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-01T19:48:55.034-04:00  INFO 3836 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-01T19:48:55.343-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-06-01T19:48:55.344-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-06-01T19:48:55.362-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Starting CashCardApplicationTests using Java 21.0.3 with PID 3836 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-06-01T19:48:55.363-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-06-01T19:48:55.532-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-06-01T19:48:55.540-04:00  INFO 3836 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 2 JDBC repository interfaces.
+2024-06-01T19:48:55.580-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-06-01T19:48:55.581-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-01T19:48:55.582-04:00  INFO 3836 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-01T19:48:55.596-04:00  INFO 3836 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-01T19:48:55.596-04:00  INFO 3836 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 232 ms
+2024-06-01T19:48:55.630-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-06-01T19:48:55.632-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:a44cdb28-11c8-43b0-8158-f5fa20f0e3df user=SA
+2024-06-01T19:48:55.632-04:00  INFO 3836 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-06-01T19:48:55.916-04:00  INFO 3836 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name testOnlyUsers
+2024-06-01T19:48:55.920-04:00  INFO 3836 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-06-01T19:48:55.960-04:00  INFO 3836 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-06-01T19:48:55.968-04:00  INFO 3836 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@293ccbdd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12f85dc8, org.springframework.security.web.context.SecurityContextHolderFilter@40f40221, org.springframework.security.web.header.HeaderWriterFilter@7f9083b4, org.springframework.web.filter.CorsFilter@474a63d9, org.springframework.security.web.authentication.logout.LogoutFilter@76480730, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@e7b7395, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@383c94ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16441c13, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d3b59e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b8d0c21, org.springframework.security.web.access.ExceptionTranslationFilter@279b83ea, org.springframework.security.web.access.intercept.AuthorizationFilter@77198cce]
+2024-06-01T19:48:56.012-04:00  INFO 3836 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 37632 (http) with context path '/'
+2024-06-01T19:48:56.015-04:00  INFO 3836 --- [    Test worker] peep.xchange.CashCardApplicationTests    : Started CashCardApplicationTests in 0.668 seconds (process running for 11.173)
+2024-06-01T19:48:56.021-04:00  INFO 3836 --- [o-auto-4-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-01T19:48:56.021-04:00  INFO 3836 --- [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-01T19:48:56.022-04:00  INFO 3836 --- [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (C:\Users\Dmers\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.16\4a451ee6484abac3a498df0f3b33ed00a6fced4d\byte-buddy-agent-1.14.16.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.7</a> at Jun 1, 2024, 7:48:58 PM</p>
+</div>
+</div>
+</body>
+</html>

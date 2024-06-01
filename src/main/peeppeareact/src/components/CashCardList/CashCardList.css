@@ -1,12 +1,12 @@
-/* CashCardList.css */
+/* src/components/CashCardList/CashCardList.css */
 .card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* Center the cards */
+  justify-content: center;
 }
 
-.card-list div {
+.card {
   background: #bad6cf; /* Pastel green */
   padding: 20px;
   border-radius: 8px;
@@ -22,26 +22,3 @@
   color: #555;
   text-align: center;
 }
-
-.card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  width: calc(33% - 32px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-  margin: 0 0 8px;
-}
-
-.card p {
-  margin: 4px 0;
-}
-
-.no-cards {
-  text-align: center;
-  color: gray;
-}
-
