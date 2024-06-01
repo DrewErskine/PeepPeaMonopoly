@@ -9,14 +9,16 @@ const LoginForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log('Attempting to log in with', { username, password }); // Log the credentials
+        console.log('Attempting to log in with', { username, password });
+
         try {
-            const response = await axios.post('http://localhost:8080/login', {
-                username: username,
-                password: password,
-            }, {
+            const params = new URLSearchParams();
+            params.append('username', username);
+            params.append('password', password);
+
+            const response = await axios.post('http://localhost:8080/login', params, {
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
             });
 

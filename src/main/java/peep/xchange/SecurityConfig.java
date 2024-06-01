@@ -46,7 +46,7 @@ class SecurityConfig {
                             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                             response.getWriter().write("{\"error\": \"Unauthorized\"}");
                         })
-                )                
+                )
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }
@@ -67,8 +67,7 @@ class SecurityConfig {
         UserDetails sara = users
             .username("sara")
             .password(passwordEncoder.encode("password"))
-            .roles("USER") 
-            .roles("CARD-OWNER")
+            .roles("USER", "CARD-OWNER") 
             .build();
         return new InMemoryUserDetailsManager(admin, sara);
     }
@@ -81,7 +80,7 @@ class SecurityConfig {
 
             Map<String, String> responseData = new HashMap<>();
             responseData.put("message", "Login successful");
-            responseData.put("token", "dummy-token"); 
+            responseData.put("token", "dummy-token");
 
             ObjectMapper objectMapper = new ObjectMapper();
             response.getWriter().write(objectMapper.writeValueAsString(responseData));
