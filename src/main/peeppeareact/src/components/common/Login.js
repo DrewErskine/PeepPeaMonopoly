@@ -1,15 +1,14 @@
-import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from './LoginForm';
-import { useAuth } from '../../AuthContext'; // Correct import
+import { useAuth } from '../../AuthContext'; 
 
 const Login = () => {
-  const { isAuthenticated, login } = useAuth(); // Correct usage
+  const { isAuthenticated, login } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLoginSubmit = (token) => {
-    login(token); // Update authentication state and store token
-    navigate('/cashcards'); // Redirect to a protected route after login
+    login(token); 
+    navigate('/cashcards'); 
   };
 
   return (

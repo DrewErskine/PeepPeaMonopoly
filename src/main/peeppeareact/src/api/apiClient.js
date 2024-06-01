@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useAuth } from '../AuthContext'; // Adjust the path if needed
+import { useAuth } from '../AuthContext'; 
 
 const apiClient = axios.create({
     baseURL: 'http://localhost:8080',
