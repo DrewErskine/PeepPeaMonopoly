@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,24 +17,21 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.servlet.http.HttpServletResponse;
-import peep.xchange.Filter.JwtAuthorizationFilter;
 import peep.xchange.Util.JwtUtil;
+
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
     private final JwtUtil jwtUtil;
-    private final JwtAuthorizationFilter jwtAuthorizationFilter;
 
-    public SecurityConfig(JwtUtil jwtUtil, JwtAuthorizationFilter jwtAuthorizationFilter) {
+    public SecurityConfig(JwtUtil jwtUtil) {
         this.jwtUtil = jwtUtil;
-        this.jwtAuthorizationFilter = jwtAuthorizationFilter;
     }
 
     @Bean
@@ -62,8 +58,7 @@ public class SecurityConfig {
                     response.getWriter().write("{\"error\": \"Unauthorized\"}");
                 })
             )
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
+            .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 

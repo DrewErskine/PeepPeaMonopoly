@@ -7,65 +7,53 @@ import CashCardDetailContainer from "./components/CashCardDetail/CashCardDetailC
 import CashCardFormContainer from "./components/CashCardForm/CashCardFormContainer";
 import Login from "./components/common/Login";
 import PrivateRoute from "./components/PrivateRoute";
-import Home from './components/home/Home'; // Ensure this matches the file name exactly
-import { AuthProvider } from './AuthContext';
 import "./App.css";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <div>
-          <Header />
-          <div className="main-content">
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route
-                path="/cashcards"
-                element={
-                  <PrivateRoute>
-                    <CashCardListContainer />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/cashcards/new"
-                element={
-                  <PrivateRoute>
-                    <CashCardFormContainer />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/cashcards/:id"
-                element={
-                  <PrivateRoute>
-                    <CashCardDetailContainer />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/home"
-                element={
-                  <PrivateRoute>
-                    <Home />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/"
-                element={
-                  <PrivateRoute>
-                    <CashCardListContainer />
-                  </PrivateRoute>
-                }
-              />
-            </Routes>
-          </div>
-          <Footer />
+    <Router>
+      <div>
+        <Header />
+        <div className="main-content">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/cashcards"
+              element={
+                <PrivateRoute>
+                  <CashCardListContainer />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/cashcards/new"
+              element={
+                <PrivateRoute>
+                  <CashCardFormContainer />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/cashcards/:id"
+              element={
+                <PrivateRoute>
+                  <CashCardDetailContainer />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <PrivateRoute>
+                  <CashCardListContainer />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
         </div>
-      </Router>
-    </AuthProvider>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

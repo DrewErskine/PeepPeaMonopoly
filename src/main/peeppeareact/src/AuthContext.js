@@ -1,42 +1,35 @@
-// AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [authToken, setAuthToken] = useState(null);
-  const [username, setUsername] = useState(null);
+  const [authToken, setAuthToken] = useState(localStorage.getItem('authToken') || null);
 
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    const storedUsername = localStorage.getItem('username');
-    if (token) {
-      setAuthToken(token);
-      setUsername(storedUsername);
-    }
-  }, []);
-
-  const login = (token, username) => {
+  const login = (token) => {
     setAuthToken(token);
-    setUsername(username);
     localStorage.setItem('authToken', token);
-    localStorage.setItem('username', username);
+    console.log('Token set:', token); // Logging the token
   };
 
   const logout = () => {
     setAuthToken(null);
-    setUsername(null);
     localStorage.removeItem('authToken');
-    localStorage.removeItem('username');
+    console.log('Token removed'); // Logging token removal
   };
 
-  const isAuthenticated = !!authToken;
+  useEffect(() => {
+    console.log('Current token:', authToken); // Logging current token
+  }, [authToken]);
 
   return (
-    <AuthContext.Provider value={{ authToken, username, isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ authToken, isAuthenticated: !!authToken, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
+
+export default AuthContext;
