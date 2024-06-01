@@ -1,8 +1,8 @@
 package peep.xchange.Users;
 
 import java.io.IOException;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,12 @@ class UsersJsonTest {
 
     @BeforeEach
     void setUp() {
-        users = new User[] {
-            new User(1L, "drew_erskine", "erskine321", "ROLE_USER"),
-            new User(2L, "sara_huang", "huang321", "ROLE_ADMIN")
-        };
+        users = Arrays.array(
+                new User(1L, "sara", "$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC", "ROLE_ADMIN"),
+                new User(2L, "peep", "$2a$10$8nLaU/6v3vE1YsRrw2LxI.6xFpkzEhO/qVqeD.Bq6PHJ7TZ/hNKI2", "ROLE_USER"),
+                new User(3L, "drew", "$2a$10$2TgYP4Um3roEpjvP.xRf1OPPquN0E64Vm98B24snFqU7w0PGu6Cyq", "ROLE_ADMIN"),
+                new User(4L, "evilDrew", "$2a$10$2TgYP4Um3roEpjvP.xRf1OPPquN0E64Vm98B24snFqU7w0PGu6Cyq", "INVALID_ROLE")
+        );
     }
 
     @Test
@@ -37,13 +39,13 @@ class UsersJsonTest {
                 .isEqualTo(1);
         assertThat(json.write(user)).hasJsonPathStringValue("@.username");
         assertThat(json.write(user)).extractingJsonPathStringValue("@.username")
-                .isEqualTo("drew_erskine");
+                .isEqualTo("sara");
         assertThat(json.write(user)).hasJsonPathStringValue("@.password");
         assertThat(json.write(user)).extractingJsonPathStringValue("@.password")
-                .isEqualTo("erskine321");
+                .isEqualTo("$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC");
         assertThat(json.write(user)).hasJsonPathStringValue("@.role");
         assertThat(json.write(user)).extractingJsonPathStringValue("@.role")
-                .isEqualTo("ROLE_USER");
+                .isEqualTo("ROLE_ADMIN");
     }
 
     @Test
@@ -51,16 +53,17 @@ class UsersJsonTest {
         String expected = """
                 {
                     "id": 1,
-                    "username": "drew_erskine",
-                    "password": "sara_huang", 
-                    "role": "ROLE_USER"
+                    "username": "sara",
+                    "password": "$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC",
+                    "role": "ROLE_ADMIN"
                 }
                 """;
-        User deserializedUser = json.parseObject(expected);
-        assertThat(deserializedUser.getId()).isEqualTo(1L);
-        assertThat(deserializedUser.getUsername()).isEqualTo("drew_erskine");
-        assertThat(deserializedUser.getPassword()).isEqualTo("sara_huang");
-        assertThat(deserializedUser.getRole()).isEqualTo("ROLE_USER");
+        assertThat(json.parse(expected))
+                .isEqualTo(new User(1L, "sara", "$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC", "ROLE_ADMIN"));
+        assertThat(json.parseObject(expected).getId()).isEqualTo(1L);
+        assertThat(json.parseObject(expected).getUsername()).isEqualTo("sara");
+        assertThat(json.parseObject(expected).getPassword()).isEqualTo("$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC");
+        assertThat(json.parseObject(expected).getRole()).isEqualTo("ROLE_ADMIN");
     }
 
     @Test
@@ -72,18 +75,32 @@ class UsersJsonTest {
     void userListDeserializationTest() throws IOException {
         String expected = """
                 [
-                     {"id": 1, "username": "drew_erskine", "password": "erskine321", "role": "ROLE_USER"},
-                     {"id": 2, "username": "sara_huang", "password": "huang321", "role": "ROLE_ADMIN"}
+                    {
+                        "id": 1,
+                        "username": "sara",
+                        "password": "$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC",
+                        "role": "ROLE_ADMIN"
+                    },
+                    {
+                        "id": 2,
+                        "username": "peep",
+                        "password": "$2a$10$8nLaU/6v3vE1YsRrw2LxI.6xFpkzEhO/qVqeD.Bq6PHJ7TZ/hNKI2",
+                        "role": "ROLE_USER"
+                    },
+                    {
+                        "id": 3,
+                        "username": "drew",
+                        "password": "$2a$10$2TgYP4Um3roEpjvP.xRf1OPPquN0E64Vm98B24snFqU7w0PGu6Cyq",
+                        "role": "ROLE_ADMIN"
+                    },
+                    {
+                        "id": 4,
+                        "username": "evilDrew",
+                        "password": "$2a$10$2TgYP4Um3roEpjvP.xRf1OPPquN0E64Vm98B24snFqU7w0PGu6Cyq",
+                        "role": "INVALID_ROLE"
+                    }
                 ]
                 """;
-        User[] deserializedUsers = jsonList.parseObject(expected);
-
-        assertThat(deserializedUsers).hasSize(users.length);
-        for (int i = 0; i < users.length; i++) {
-            assertThat(deserializedUsers[i].getId()).isEqualTo(users[i].getId());
-            assertThat(deserializedUsers[i].getUsername()).isEqualTo(users[i].getUsername());
-            assertThat(deserializedUsers[i].getPassword()).isEqualTo(users[i].getPassword());
-            assertThat(deserializedUsers[i].getRole()).isEqualTo(users[i].getRole());
-        }
+        assertThat(jsonList.parse(expected)).isEqualTo(users);
     }
 }

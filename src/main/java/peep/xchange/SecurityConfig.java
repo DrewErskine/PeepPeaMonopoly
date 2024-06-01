@@ -70,7 +70,22 @@ class SecurityConfig {
             .roles("USER")
             .roles("CARD-OWNER")
             .build();
-        return new InMemoryUserDetailsManager(admin, sara);
+        UserDetails peep = users
+            .username("peep")
+            .password(passwordEncoder.encode("meow"))
+            .roles("CARD-OWNER")
+            .build();
+        UserDetails drew = users
+            .username("drew")
+            .password(passwordEncoder.encode("erskine"))
+            .roles("CARD-OWNER")
+            .build();
+        UserDetails evilDrew = users
+            .username("evilDrew")
+            .password(passwordEncoder.encode("luf"))
+            .roles("NON-OWNER")
+            .build();
+        return new InMemoryUserDetailsManager(admin, sara, peep, drew, evilDrew);
     }
 
     @Bean
@@ -81,7 +96,6 @@ class SecurityConfig {
 
             Map<String, String> responseData = new HashMap<>();
             responseData.put("message", "Login successful");
-            responseData.put("token", "dummy-token");
 
             ObjectMapper objectMapper = new ObjectMapper();
             response.getWriter().write(objectMapper.writeValueAsString(responseData));

@@ -1,12 +1,14 @@
 package peep.xchange.Users;
 
+import java.util.Objects;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * Represents a User entity in the system.
  */
-@Table("users")
+@Table("USERS")
 public class User {
 
     @Id
@@ -37,7 +39,7 @@ public class User {
         this.role = role;
     }
 
-    // Standard getters and setters with minimal validation (for demonstration purposes)
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -69,5 +71,20 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    // Equals and hashCode methods (useful for testing equality)
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id.equals(user.id) && username.equals(user.username) && password.equals(user.password) && role.equals(user.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, password, role);
     }
 }

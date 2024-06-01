@@ -1,14 +1,26 @@
 [
     {
         "id": 1,
-        "username": "drew_erskine",
-        "password": "erskine321",
-        "role": "ROLE_USER"
+        "username": "sara",
+        "password": "$2a$10$DowJ/HY6y5cF2oKYOJh9guvjdgM1Wpa7.kgI8/ojChV4sLQHEO7WC",
+        "role": "ROLE_ADMIN"
     },
     {
         "id": 2,
-        "username": "sara_huang",
-        "password": "huang321",
+        "username": "peep",
+        "password": "$2a$10$8nLaU/6v3vE1YsRrw2LxI.6xFpkzEhO/qVqeD.Bq6PHJ7TZ/hNKI2",
+        "role": "ROLE_USER"
+    },
+    {
+        "id": 3,
+        "username": "drew",
+        "password": "$2a$10$2TgYP4Um3roEpjvP.xRf1OPPquN0E64Vm98B24snFqU7w0PGu6Cyq",
         "role": "ROLE_ADMIN"
+    },
+    {
+        "id": 4,
+        "username": "evilDrew",
+        "password": "$2a$10$2TgYP4Um3roEpjvP.xRf1OPPquN0E64Vm98B24snFqU7w0PGu6Cyq",
+        "role": "INVALID_ROLE"
     }
 ]
