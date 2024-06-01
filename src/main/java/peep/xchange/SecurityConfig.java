@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,35 +21,44 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.servlet.http.HttpServletResponse;
+import peep.xchange.Util.JwtUtil;
+
 
 @Configuration
-class SecurityConfig {
+@EnableWebSecurity
+public class SecurityConfig {
+
+    private final JwtUtil jwtUtil;
+
+    public SecurityConfig(JwtUtil jwtUtil) {
+        this.jwtUtil = jwtUtil;
+    }
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .cors(Customizer.withDefaults())
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(request -> request
-                                .requestMatchers("/login", "/logout", "/h2-console/**", "/favicon.ico", "/", "./").permitAll()
-                                .requestMatchers("/users/**").hasRole("ADMIN")
-                                .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
-                                .requestMatchers("/manifest.json").permitAll()
-                                .anyRequest().authenticated()
-                )
-                .formLogin(login -> login
-                        .loginProcessingUrl("/login")
-                        .successHandler(authenticationSuccessHandler())
-                        .failureHandler(authenticationFailureHandler())
-                        .permitAll())
-                .exceptionHandling(exception -> exception
-                                .authenticationEntryPoint((request, response, authException) -> {
-                                    response.setContentType("application/json");
-                                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                                    response.getWriter().write("{\"error\": \"Unauthorized\"}");
-                                })
-                )
-                .httpBasic(Customizer.withDefaults());
+            .cors(Customizer.withDefaults())
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(request -> request
+                .requestMatchers("/login", "/logout", "/h2-console/**", "/favicon.ico", "/", "./").permitAll()
+                .requestMatchers("/users/**").hasRole("ADMIN")
+                .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
+                .requestMatchers("/manifest.json").permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(login -> login
+                .loginProcessingUrl("/login")
+                .successHandler(authenticationSuccessHandler())
+                .failureHandler(authenticationFailureHandler())
+                .permitAll())
+            .exceptionHandling(exception -> exception
+                .authenticationEntryPoint((request, response, authException) -> {
+                    response.setContentType("application/json");
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    response.getWriter().write("{\"error\": \"Unauthorized\"}");
+                })
+            )
+            .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 
@@ -95,9 +105,11 @@ class SecurityConfig {
             response.setStatus(HttpServletResponse.SC_OK);
             response.setContentType("application/json;charset=UTF-8");
 
+            String token = jwtUtil.generateToken(authentication.getName());
+
             Map<String, String> responseData = new HashMap<>();
             responseData.put("message", "Login successful");
-            responseData.put("token", "generated-token-here");
+            responseData.put("token", token);
 
             ObjectMapper objectMapper = new ObjectMapper();
             response.getWriter().write(objectMapper.writeValueAsString(responseData));

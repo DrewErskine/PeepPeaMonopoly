@@ -1,7 +1,15 @@
 package peep.xchange.Users;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -12,18 +20,18 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import peep.xchange.Filter.JwtAuthorizationFilter;
+import peep.xchange.Util.JwtUtil;
 
 @WebMvcTest(UserController.class)
 class UserControllerTests {
@@ -34,6 +42,12 @@ class UserControllerTests {
     @MockBean
     private UserService userService;
 
+    @MockBean
+    private JwtUtil jwtUtil;
+
+    @MockBean
+    private JwtAuthorizationFilter jwtAuthorizationFilter;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -43,6 +57,7 @@ class UserControllerTests {
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = { "ADMIN" })
     void testGetUserById() throws Exception {
         User user = new User(1L, "testuser", "password", "ROLE_USER");
         when(userService.getUserById(1L)).thenReturn(Optional.of(user));
@@ -54,6 +69,7 @@ class UserControllerTests {
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = { "ADMIN" })
     void testCreateUser() throws Exception {
         User user = new User(1L, "testuser", "password", "ROLE_USER");
         when(userService.createUser(any(User.class))).thenReturn(user);
@@ -73,6 +89,7 @@ class UserControllerTests {
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = { "ADMIN" })
     void testGetAllUsers() throws Exception {
         List<User> users = Arrays.asList(
                 new User(1L, "testuser1", "password1", "ROLE_USER"),
@@ -92,6 +109,7 @@ class UserControllerTests {
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = { "ADMIN" })
     void testUpdateUser() throws Exception {
         User userUpdate = new User(1L, "updateduser", "newpassword", "ROLE_USER");
         when(userService.updateUser(eq(1L), any(User.class))).thenReturn(userUpdate);
@@ -111,6 +129,7 @@ class UserControllerTests {
     }
 
     @Test
+    @WithMockUser(username = "admin", roles = { "ADMIN" })
     void testDeleteUser() throws Exception {
         doNothing().when(userService).deleteUser(1L);
 

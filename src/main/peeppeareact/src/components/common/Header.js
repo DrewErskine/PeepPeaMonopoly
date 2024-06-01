@@ -22,9 +22,10 @@ const Header = () => {
       const response = await fetch('http://localhost:8080/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: new URLSearchParams(credentials).toString(),
+        body: JSON.stringify(credentials),
+        credentials: 'include',
       });
 
       if (!response.ok) {
@@ -33,7 +34,7 @@ const Header = () => {
 
       const data = await response.json();
       console.log('Login response:', data);
-      login(data.token); // Update authentication state
+      login(data.token);
       setShowModel(false);
     } catch (error) {
       console.error('Login error:', error);
@@ -41,8 +42,8 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    logout(); // Update authentication state
-    localStorage.removeItem('authToken'); // Remove token if applicable
+    logout();
+    localStorage.removeItem('authToken');
   };
 
   return (
