@@ -1,10 +1,6 @@
 import axios from 'axios';
+import { useAuth } from '../AuthContext'; // Adjust the path if needed
 
-// Replace with your actual username and password for Basic Auth
-const username = 'sarah1';
-const password = 'abc123';
-
-// Create an Axios instance
 const apiClient = axios.create({
     baseURL: 'http://localhost:8080',
     headers: {
@@ -12,10 +8,11 @@ const apiClient = axios.create({
     },
 });
 
-// Add a request interceptor to include the Basic Auth header
 apiClient.interceptors.request.use(config => {
-    const token = btoa(`${username}:${password}`);
-    config.headers['Authorization'] = `Basic ${token}`;
+    const { authToken } = useAuth();
+    if (authToken) {
+        config.headers['Authorization'] = `Bearer ${authToken}`;
+    }
     return config;
 }, error => {
     return Promise.reject(error);

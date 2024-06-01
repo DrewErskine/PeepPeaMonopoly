@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="peep.xchange.Users.UsersJsonTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-06-01T01:14:53" hostname="DREW" time="0.025">
+<testsuite name="peep.xchange.Users.UsersJsonTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-06-01T01:51:28" hostname="DREW" time="0.016">
   <properties/>
   <testcase name="userListSerializationTest()" classname="peep.xchange.Users.UsersJsonTest" time="0.003"/>
-  <testcase name="userListDeserializationTest()" classname="peep.xchange.Users.UsersJsonTest" time="0.016"/>
+  <testcase name="userListDeserializationTest()" classname="peep.xchange.Users.UsersJsonTest" time="0.006"/>
   <testcase name="userSerializationTest()" classname="peep.xchange.Users.UsersJsonTest" time="0.003"/>
   <testcase name="userDeserializationTest()" classname="peep.xchange.Users.UsersJsonTest" time="0.001"/>
-  <system-out><![CDATA[2024-05-31T21:14:53.561-04:00  INFO 2056 --- [xchange] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [peep.xchange.Users.UsersJsonTest]: UsersJsonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-05-31T21:14:53.571-04:00  INFO 2056 --- [xchange] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.Users.UsersJsonTest
+  <system-out><![CDATA[2024-05-31T21:51:28.401-04:00  INFO 3680 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [peep.xchange.Users.UsersJsonTest]: UsersJsonTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-31T21:51:28.411-04:00  INFO 3680 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.Users.UsersJsonTest
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

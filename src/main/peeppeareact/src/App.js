@@ -1,4 +1,3 @@
-// C:\Users\Dmers\Code\Spring\PeepMonopoly\src\main\peeppeareact\src\App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/common/Header'; 
@@ -18,38 +17,12 @@ function App() {
         <div className="main-content">
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route
-              path="/cashcards/new"
-              element={
-                <PrivateRoute>
-                  <CashCardFormContainer />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/cashcards/:id"
-              element={
-                <PrivateRoute>
-                  <CashCardDetailContainer />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/cashcards"
-              element={
-                <PrivateRoute>
-                  <CashCardListContainer />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/"
-              element={
-                <PrivateRoute>
-                  <CashCardListContainer />
-                </PrivateRoute>
-              }
-            />
+            <Route element={<PrivateRoute />}>
+              <Route path="/cashcards/new" element={<CashCardFormContainer />} />
+              <Route path="/cashcards/:id" element={<CashCardDetailContainer />} />
+              <Route path="/cashcards" element={<CashCardListContainer />} />
+              <Route path="/" element={<CashCardListContainer />} />
+            </Route>
           </Routes>
         </div>
         <Footer />

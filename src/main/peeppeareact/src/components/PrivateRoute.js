@@ -1,10 +1,10 @@
-// C:\Users\Dmers\Code\Spring\PeepMonopoly\src\main\peeppeareact\src\components\PrivateRoute.js
-import React, { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../AuthContext';
+import React from 'react';
+import { Route, Navigate } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
 const PrivateRoute = ({ children }) => {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useAuth();
+
   return isAuthenticated ? children : <Navigate to="/login" />;
 };
 

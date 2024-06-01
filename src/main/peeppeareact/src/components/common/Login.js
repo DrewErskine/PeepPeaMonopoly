@@ -1,11 +1,10 @@
-// C:\Users\Dmers\Code\Spring\PeepMonopoly\src\main\peeppeareact\src\components\common\Login.js
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from './LoginForm';
-import { AuthContext } from '../../AuthContext';
+import { useAuth } from '../../AuthContext'; // Correct import
 
 const Login = () => {
-  const { isAuthenticated, login } = useContext(AuthContext);
+  const { isAuthenticated, login } = useAuth(); // Correct usage
   const navigate = useNavigate();
 
   const handleLoginSubmit = (token) => {

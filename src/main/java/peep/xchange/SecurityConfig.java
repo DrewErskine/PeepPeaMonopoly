@@ -29,7 +29,7 @@ class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(request -> request
-                                .requestMatchers("/login", "/logout", "/h2-console/**").permitAll()
+                                .requestMatchers("/login", "/logout", "/h2-console/**", "/favicon.ico", "/", "./").permitAll()
                                 .requestMatchers("/users/**").hasRole("ADMIN")
                                 .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
                                 .requestMatchers("/manifest.json").permitAll()
@@ -62,12 +62,13 @@ class SecurityConfig {
         UserDetails admin = users
             .username("admin")
             .password(passwordEncoder.encode("admin123"))
-            .roles("ADMIN") 
+            .roles("ADMIN")
             .build();
         UserDetails sara = users
             .username("sara")
             .password(passwordEncoder.encode("password"))
-            .roles("USER", "CARD-OWNER") 
+            .roles("USER")
+            .roles("CARD-OWNER")
             .build();
         return new InMemoryUserDetailsManager(admin, sara);
     }
