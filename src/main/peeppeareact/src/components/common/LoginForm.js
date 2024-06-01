@@ -23,10 +23,8 @@ const LoginForm = ({ onSubmit }) => {
       });
 
       console.log('Login response:', response);
-      const { token } = response.data;
-      localStorage.setItem('authToken', token); // Store the token
       setError('');
-      if (onSubmit) onSubmit(token); // Call the onSubmit function passed as a prop
+      if (onSubmit) onSubmit({ username, password });
     } catch (err) {
       console.error('Login error:', err.response);
       setError('Login failed. Please try again.');

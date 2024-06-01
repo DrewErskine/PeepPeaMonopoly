@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="peep.xchange.Users.UserServiceTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-06-01T21:20:07" hostname="DREW" time="0.276">
+  <properties/>
+  <testcase name="testCreateUser()" classname="peep.xchange.Users.UserServiceTests" time="0.274"/>
+  <testcase name="testGetUserById()" classname="peep.xchange.Users.UserServiceTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -27,6 +27,7 @@ class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(request -> request
                                 .requestMatchers("/login", "/logout", "/h2-console/**", "/favicon.ico", "/", "./").permitAll()
@@ -41,11 +42,11 @@ class SecurityConfig {
                         .failureHandler(authenticationFailureHandler())
                         .permitAll())
                 .exceptionHandling(exception -> exception
-                        .authenticationEntryPoint((request, response, authException) -> {
-                            response.setContentType("application/json");
-                            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                            response.getWriter().write("{\"error\": \"Unauthorized\"}");
-                        })
+                                .authenticationEntryPoint((request, response, authException) -> {
+                                    response.setContentType("application/json");
+                                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                                    response.getWriter().write("{\"error\": \"Unauthorized\"}");
+                                })
                 )
                 .httpBasic(Customizer.withDefaults());
         return http.build();
@@ -96,6 +97,7 @@ class SecurityConfig {
 
             Map<String, String> responseData = new HashMap<>();
             responseData.put("message", "Login successful");
+            responseData.put("token", "generated-token-here");
 
             ObjectMapper objectMapper = new ObjectMapper();
             response.getWriter().write(objectMapper.writeValueAsString(responseData));

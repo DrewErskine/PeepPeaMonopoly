@@ -6,9 +6,9 @@ const Login = () => {
   const { isAuthenticated, login } = useAuth(); 
   const navigate = useNavigate();
 
-  const handleLoginSubmit = (token) => {
-    login(token); 
-    navigate('/cashcards'); 
+  const handleLoginSubmit = (credentials) => {
+    login(credentials); 
+    navigate('/cashcards'); // Adjust the path to your desired page
   };
 
   return (

@@ -42,7 +42,6 @@
 
 .no-cards {
   text-align: center;
-  padding: 16px;
-  font-size: 18px;
-  color: #777;
+  color: gray;
 }
+
