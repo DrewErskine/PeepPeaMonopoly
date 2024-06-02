@@ -1,4 +1,4 @@
-# PeepMonopoly
+# Peep Pea Ponopoly
 
 **LIVE DEMO:** [Watch on YouTube](https://youtu.be/u7EFFxZ7kOc)
 
