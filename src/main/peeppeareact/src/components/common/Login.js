@@ -26,7 +26,7 @@ const Login = () => {
       const data = await response.json();
       console.log('Login response:', data);
       login(data.token, data.username);
-      navigate('/home');
+      navigate('/home'); // Adjust the path to your desired page
     } catch (error) {
       console.error('Login error:', error);
     }

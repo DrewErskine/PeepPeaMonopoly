@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -17,12 +19,13 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.servlet.http.HttpServletResponse;
+import peep.xchange.Filter.JwtAuthorizationFilter;
 import peep.xchange.Util.JwtUtil;
-
 
 @Configuration
 @EnableWebSecurity
@@ -40,12 +43,13 @@ public class SecurityConfig {
             .cors(Customizer.withDefaults())
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(request -> request
-                .requestMatchers("/login", "/logout", "/h2-console/**", "/favicon.ico", "/", "./").permitAll()
+                .requestMatchers("/login", "/public/**", "/logout", "/h2-console/**", "/favicon.ico", "/", "./").permitAll()
                 .requestMatchers("/users/**").hasRole("ADMIN")
                 .requestMatchers("/cashcards/**").hasAnyRole("CARD-OWNER", "NON-OWNER")
                 .requestMatchers("/manifest.json").permitAll()
                 .anyRequest().authenticated()
             )
+            .addFilterBefore(new JwtAuthorizationFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class)
             .formLogin(login -> login
                 .loginProcessingUrl("/login")
                 .successHandler(authenticationSuccessHandler())
@@ -68,6 +72,11 @@ public class SecurityConfig {
     }
 
     @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
+    }
+
+    @Bean
     UserDetailsService testOnlyUsers(PasswordEncoder passwordEncoder) {
         User.UserBuilder users = User.builder();
         UserDetails admin = users
@@ -78,7 +87,6 @@ public class SecurityConfig {
         UserDetails sara = users
             .username("sara")
             .password(passwordEncoder.encode("password"))
-            .roles("USER")
             .roles("CARD-OWNER")
             .build();
         UserDetails peep = users
@@ -110,6 +118,7 @@ public class SecurityConfig {
             Map<String, String> responseData = new HashMap<>();
             responseData.put("message", "Login successful");
             responseData.put("token", token);
+            responseData.put("username", authentication.getName());
 
             ObjectMapper objectMapper = new ObjectMapper();
             response.getWriter().write(objectMapper.writeValueAsString(responseData));

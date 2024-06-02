@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="peep.xchange.Users.UserServiceTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-06-01T23:48:58" hostname="DREW" time="0.283">
+<testsuite name="peep.xchange.Users.UserServiceTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-06-02T01:10:26" hostname="DREW" time="0.283">
   <properties/>
-  <testcase name="testCreateUser()" classname="peep.xchange.Users.UserServiceTests" time="0.281"/>
+  <testcase name="testCreateUser()" classname="peep.xchange.Users.UserServiceTests" time="0.282"/>
   <testcase name="testGetUserById()" classname="peep.xchange.Users.UserServiceTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

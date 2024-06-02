@@ -1,38 +1,36 @@
 // src/components/CashCardList/CashCardListContainer.js
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import CashCardList from './CashCardList';
-import { useAuth } from '../../AuthContext';
+import apiClient from '../../api/apiClient'; // Ensure the correct import path
+import CashCardList from './CashCardList'; // Import the CashCardList component
+import './CashCardList.css'; // Import the shared CSS
 
 const CashCardListContainer = () => {
-  const [cards, setCards] = useState([]);
+  const [cashCards, setCashCards] = useState([]);
   const [error, setError] = useState(null);
-  const { authToken } = useAuth();
 
   useEffect(() => {
     const fetchCashCards = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/cashcards', {
-          headers: {
-            Authorization: `Bearer ${authToken}`
-          }
-        });
-        setCards(response.data);
+        const response = await apiClient.get('/cashcards');
+        setCashCards(response.data);
       } catch (err) {
-        setError('Failed to fetch cash cards');
+        setError('Failed to fetch cash cards. Please ensure you are logged in.');
       }
     };
 
-    if (authToken) {
-      fetchCashCards();
-    }
-  }, [authToken]);
+    fetchCashCards();
+  }, []);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>{error}</div>;
   }
 
-  return <CashCardList cards={cards} />;
+  return (
+    <div>
+      <h1>Cash Cards</h1>
+      <CashCardList cards={cashCards} />
+    </div>
+  );
 };
 
 export default CashCardListContainer;

@@ -1,7 +1,7 @@
 // src/components/CashCardList/CashCardList.js
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CashCardList.css';
+import './CashCardList.css'; // Import the shared CSS
 
 const CashCardList = ({ cards }) => {
   if (cards.length === 0) {

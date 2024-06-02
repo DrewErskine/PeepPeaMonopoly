@@ -1,4 +1,3 @@
-// src/components/common/Header.js
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Model from './Model';
@@ -47,7 +46,6 @@ const Header = () => {
   const handleLogout = () => {
     logout();
     localStorage.removeItem('authToken');
-    localStorage.removeItem('username');
   };
 
   return (
