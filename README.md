@@ -1,10 +1,6 @@
 # Peep Pea Ponopoly
 
 **LIVE DEMO:** [Watch on YouTube](https://youtu.be/u7EFFxZ7kOc)
-
-This demo is super cool and rare, check it out! It's the first one ever included in the README. Shout out to my graphics professor, Mr. Fredricks, who encouraged me to do this because he doesn't like reading. Honestly, that's a vibe. I support it heavily—more people should just ship their coding clips to YouTube! Don't let Sara be a hater.
-
-
 ---
 
 PeepMonopoly is a full-stack application developed using Spring Boot 3 for the backend and React for the frontend. This README is divided into multiple sections for easier navigation.
