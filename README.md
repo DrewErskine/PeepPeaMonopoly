@@ -23,6 +23,7 @@ PeepMonopoly is a full-stack application developed using Spring Boot 3 for the b
 PeepMonopoly is designed to manage users and cash cards with functionalities encapsulated in various Java classes and React components.
 
 ### Project Structure
+```
 PeepMonopoly
 │
 ├── .gradle
@@ -88,7 +89,7 @@ PeepMonopoly
         │       └── PrivateRoute.js
         └── api
             └── apiClient.js
-
+```
 
 ### Setup and Build Instructions
 
