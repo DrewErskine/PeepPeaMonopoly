@@ -23,7 +23,6 @@ PeepMonopoly is a full-stack application developed using Spring Boot 3 for the b
 PeepMonopoly is designed to manage users and cash cards with functionalities encapsulated in various Java classes and React components.
 
 ### Project Structure
-```
 PeepMonopoly
 │
 ├── .gradle
@@ -40,21 +39,26 @@ PeepMonopoly
 │   │   │           │   ├── UserController.java
 │   │   │           │   ├── UserRepository.java
 │   │   │           │   ├── UserService.java
-│   │   │           ├── CashCard.java
+│   │   │           ├── CashCard
+│   │   │           │   ├── CashCard.java
+│   │   │           │   ├── CashCardController.java
+│   │   │           │   ├── CashCardRepository.java
+│   │   │           ├── Config
+│   │   │           │   ├── SecurityConfig.java
+│   │   │           │   └── WebConfig.java
 │   │   │           ├── CashCardApplication.java
-│   │   │           ├── CashCardController.java
-│   │   │           ├── CashCardRepository.java
-│   │   │           ├── SecurityConfig.java
 │   │   └── resources
 │   │       ├── static
-│   │       │   ├── index.html
-│   │       │   └── static
+│   │       │   └── index.html
 │   │       ├── application.properties
 │   │       └── schema.sql
 │   └── test
 │       ├── java
 │       │   └── peep
 │       │       └── xchange
+│       │           └── Users
+│       │           │    ├── UserControllerTests.java
+│       │           │    ├──UserJsonTest.java
 │       │           ├── CashCardApplicationTests.java
 │       │           ├── CashCardJsonTest.java
 │       └── resources
@@ -69,11 +73,22 @@ PeepMonopoly
         │   │   ├── CashCardDetail.css
         │   │   └── CashCardDetailContainer.js
         │   ├── CashCardForm
+        │   │   ├── CashCardForm.js
+        │   │   ├── CashCardForm.css
+        │   │   └── CashCardFormContainer.js
         │   ├── CashCardList
+        │   │   ├── CashCardList.js
+        │   │   ├── CashCardList.css
+        │   │   └── CashCardListContainer.js
         │   └── common
+        │       ├── Header.js
+        │       ├── Footer.js
+        │       ├── LoginForm.js
+        │       ├── Home.js
+        │       └── PrivateRoute.js
         └── api
             └── apiClient.js
-```
+
 
 ### Setup and Build Instructions
 
