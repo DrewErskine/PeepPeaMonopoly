@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="peep.xchange.Users.UserControllerTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-06-02T01:13:34" hostname="DREW" time="0.359">
+<testsuite name="peep.xchange.Users.UserControllerTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-06-11T16:48:41" hostname="DREW" time="0.354">
   <properties/>
-  <testcase name="testGetAllUsers()" classname="peep.xchange.Users.UserControllerTests" time="0.275"/>
-  <testcase name="testUpdateUser()" classname="peep.xchange.Users.UserControllerTests" time="0.029"/>
+  <testcase name="testGetAllUsers()" classname="peep.xchange.Users.UserControllerTests" time="0.27"/>
+  <testcase name="testUpdateUser()" classname="peep.xchange.Users.UserControllerTests" time="0.03"/>
   <testcase name="testCreateUser()" classname="peep.xchange.Users.UserControllerTests" time="0.014"/>
   <testcase name="testDeleteUser()" classname="peep.xchange.Users.UserControllerTests" time="0.021"/>
-  <testcase name="testGetUserById()" classname="peep.xchange.Users.UserControllerTests" time="0.015"/>
-  <system-out><![CDATA[2024-06-01T21:13:33.441-04:00  INFO 6364 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [peep.xchange.Users.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-06-01T21:13:33.456-04:00  INFO 6364 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.Users.UserControllerTests
+  <testcase name="testGetUserById()" classname="peep.xchange.Users.UserControllerTests" time="0.014"/>
+  <system-out><![CDATA[2024-06-11T12:48:40.759-04:00  INFO 22240 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [peep.xchange.Users.UserControllerTests]: UserControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-11T12:48:40.773-04:00  INFO 22240 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration peep.xchange.CashCardApplication for test class peep.xchange.Users.UserControllerTests
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
@@ -17,36 +17,36 @@
 
  :: Spring Boot ::                (v3.3.0)
 
-2024-06-01T21:13:33.476-04:00  INFO 6364 --- [    Test worker] peep.xchange.Users.UserControllerTests   : Starting UserControllerTests using Java 21.0.3 with PID 6364 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
-2024-06-01T21:13:33.476-04:00  INFO 6364 --- [    Test worker] peep.xchange.Users.UserControllerTests   : No active profile set, falling back to 1 default profile: "default"
-2024-06-01T21:13:33.944-04:00  INFO 6364 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2024-06-01T21:13:34.102-04:00  WARN 6364 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2024-06-11T12:48:40.787-04:00  INFO 22240 --- [    Test worker] peep.xchange.Users.UserControllerTests   : Starting UserControllerTests using Java 21.0.3 with PID 22240 (started by Dmers in C:\Users\Dmers\Code\Spring\PeepMonopoly)
+2024-06-11T12:48:40.787-04:00  INFO 22240 --- [    Test worker] peep.xchange.Users.UserControllerTests   : No active profile set, falling back to 1 default profile: "default"
+2024-06-11T12:48:41.272-04:00  INFO 22240 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-06-11T12:48:41.418-04:00  WARN 22240 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: d727772f-1436-4101-a7a7-8eb63a38ebda
+Using generated security password: 1eedc179-2a6c-4396-b3f4-50841cc9486c
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2024-06-01T21:13:34.163-04:00  INFO 6364 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2024-06-01T21:13:34.203-04:00  INFO 6364 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a8d4a3c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dd7b622, org.springframework.security.web.context.SecurityContextHolderFilter@58842f55, org.springframework.security.web.header.HeaderWriterFilter@7aece85c, org.springframework.web.filter.CorsFilter@73b8c79b, org.springframework.security.web.csrf.CsrfFilter@7064ae69, org.springframework.security.web.authentication.logout.LogoutFilter@4105b1d2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@d9e61f2, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@351aa7f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5c3b3f04, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@61f9cab2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@dc6c5ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e620fe7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c174215, org.springframework.security.web.access.ExceptionTranslationFilter@32142479, org.springframework.security.web.access.intercept.AuthorizationFilter@411acaed]
-2024-06-01T21:13:34.426-04:00  INFO 6364 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-06-01T21:13:34.426-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-06-01T21:13:34.427-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2024-06-01T21:13:34.479-04:00  INFO 6364 --- [    Test worker] peep.xchange.Users.UserControllerTests   : Started UserControllerTests in 1.016 seconds (process running for 11.855)
-2024-06-01T21:13:34.642-04:00  INFO 6364 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2024-06-01T21:13:34.642-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-06-01T21:13:34.642-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2024-06-01T21:13:34.788-04:00  INFO 6364 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2024-06-01T21:13:34.788-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-06-01T21:13:34.788-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2024-06-01T21:13:34.817-04:00  INFO 6364 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2024-06-01T21:13:34.817-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-06-01T21:13:34.817-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2024-06-01T21:13:34.832-04:00  INFO 6364 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2024-06-01T21:13:34.832-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-06-01T21:13:34.832-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2024-06-01T21:13:34.855-04:00  INFO 6364 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2024-06-01T21:13:34.855-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-06-01T21:13:34.855-04:00  INFO 6364 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-06-11T12:48:41.486-04:00  INFO 22240 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-06-11T12:48:41.526-04:00  INFO 22240 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c36c62a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a273e53, org.springframework.security.web.context.SecurityContextHolderFilter@411acaed, org.springframework.security.web.header.HeaderWriterFilter@4f168322, org.springframework.web.filter.CorsFilter@2a4edf0b, org.springframework.security.web.csrf.CsrfFilter@7a56c3c7, org.springframework.security.web.authentication.logout.LogoutFilter@73b8c79b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c419713, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1a8d4a3c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@36fb5ba, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@29701f1f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@d9e61f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61f9cab2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1972346b, org.springframework.security.web.access.ExceptionTranslationFilter@4105b1d2, org.springframework.security.web.access.intercept.AuthorizationFilter@2c174215]
+2024-06-11T12:48:41.745-04:00  INFO 22240 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-11T12:48:41.745-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-11T12:48:41.746-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-11T12:48:41.791-04:00  INFO 22240 --- [    Test worker] peep.xchange.Users.UserControllerTests   : Started UserControllerTests in 1.013 seconds (process running for 12.947)
+2024-06-11T12:48:41.950-04:00  INFO 22240 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-06-11T12:48:41.950-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-11T12:48:41.951-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-11T12:48:42.094-04:00  INFO 22240 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-06-11T12:48:42.094-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-11T12:48:42.094-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-06-11T12:48:42.124-04:00  INFO 22240 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-06-11T12:48:42.124-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-11T12:48:42.124-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-06-11T12:48:42.139-04:00  INFO 22240 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-06-11T12:48:42.139-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-11T12:48:42.139-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-06-11T12:48:42.160-04:00  INFO 22240 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-06-11T12:48:42.161-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-11T12:48:42.161-04:00  INFO 22240 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

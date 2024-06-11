@@ -96,12 +96,16 @@ Ensure you have the following installed:
 - Node.js
 - npm
 - Gradle
+---
+---
 
-### Backend (Spring Boot)
+## Run this application -
+
+#### First start the *Backend* (Spring Boot)
 
 1. Navigate to the project directory:
    ```sh
-   cd C:\Users\Dmers\Code\Spring\PeepMonopoly
+   cd C:/Path/To/Code/PeepMonopoly
    ```
 
 2. Clean and build the project:
@@ -114,41 +118,31 @@ Ensure you have the following installed:
    ./gradlew bootRun
    ```
 
-### Frontend (React)
+#### Second start the *Frontend* (React)
 
-1. Navigate to the React project directory:
+4. Navigate to the React project directory:
    ```sh
    cd src/main/peeppeareact
    ```
-
-2. Build the React application:
+5. Build the React application:
    ```sh
-   npm run build
+   npm run Start
    ```
 
-3. Copy the build output to the Spring Boot resources static directory:
+#### View in *browser*
+
+6. 
    ```sh
-   cp -r build/* ../resources/static/
+   http://localhost:3000/
    ```
-
-## Running the Application
-
-After setting up and building both the backend and frontend, you can run the application using the following command:
-```sh
-./gradlew bootRun
-```
-
-## Contribution
-
-Feel free to fork this repository and make contributions. Pull requests are welcome.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ---
 
-## Spring Boot Application
+
+
+---
+## Spring Boot Application Section
+---
 
 The Spring Boot application is the backend of the PeepMonopoly project. It manages users and cash cards, provides RESTful APIs, and integrates with the frontend React application.
 
@@ -216,20 +210,6 @@ Test classes are located under the `src/test` directory.
 
 Resource files such as SQL schemas, JSON data, and application properties are located under the `src/main/resources` and `src/test/resources` directories.
 
-### Detailed Build Instructions
-
-1. **Clean and Build:**
-   ```sh
-   ./gradlew clean build
-   ```
-
-2. **Run the Application:**
-   ```sh
-   ./gradlew bootRun
-   ```
-
----
-
 ## PeeppeaReact Application
 
 *Placeholder for the PeeppeaReact application details. This section will be expanded with specific information about the React frontend, its structure, and how to work with it.*
@@ -245,4 +225,10 @@ Overview of the various components used in the React application.
 ### API Integration
 
 Details about API integration and data handling.
-```
+
+---
+
+
+---
+## React Application Section - Todo
+---
